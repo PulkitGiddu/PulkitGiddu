@@ -1,6 +1,6 @@
-[![MasterHead](https://1.bp.blogspot.com/-7A4WynwLsMw/XbBpCXG8fHI/AAAAAAAAMt4/uOa1bpLskYgrwGbllhSu2SDj_Mig8SXJQCLcBGAsYHQ/s1600/2000_600px.gif)]
-<h1 align="center">Hi 👋, I'm Pulkit Giddu</h1>
-<h3 align="center">I'm a third year ENTC undergraduate pursuing B.Tech and a passionate programmer who loves to code. I am creatively curious and a self-learner. I love exploring new technologies and currently learning new skills. • 🌱 I’m currently focusing on Android Development and practicing Data Structures and Algorithms every day. • 💬 I’m looking forward to contribute to Open Source Projects. • ⚡ Fun fact: There are 10 types of people in this world those who understand binary and those who don't :) Show some ❤ by giving⭐to my Repositories, at least your star could make someone's day 😄.</h3>
+[![MasterHead](https://1.bp.blogspot.com/-7A4WynwLsMw/XbBpCXG8fHI/AAAAAAAAMt4/uOa1bpLskYgrwGbllhSu2SDj_Mig8SXJQCLcBGAsYHQ/s1600/2000_600px.gif)
+<h1 align="center">👋 Myself Pulkit Giddu</h1>
+<h3 align="center"></h3>
 <img align ="right" alt = "Coding" width = "300" src="https://i.pinimg.com/originals/e4/26/70/e426702edf874b181aced1e2fa5c6cde.gif"> 
 
 
@@ -22,6 +22,5 @@
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=pulkitgiddu&show_icons=true&locale=en&layout=compact" alt="pulkitgiddu" /></p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=pulkitgiddu&show_icons=true&locale=en" alt="pulkitgiddu" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=pulkitgiddu&" alt="pulkitgiddu" /></p>
+
