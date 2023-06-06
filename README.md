@@ -10,7 +10,7 @@ Hi, I'm Pulkit Giddu!
 </p>
 <hr/>
 <samp>
-I am a creative🎡, time punctual 🎓, Dedicated proactive team player with a passion for creating impactful solutions🎯, Goal-oriented individual👩‍💻 ♀️ along with a high-energy level🤹‍♀️, Honed communication skills👐,  Problem Solving and Strong organizational skills👮‍♀️.
+I am a creative🎡, time punctual 🎓, Dedicated proactive team player with a passion for creating impactful solutions🎯, Goal-oriented individual 🧑‍🎓 along with a high-energy level, Strong communication skills👐, Problem-Solving and Strong organizational skills 🧑‍💻.
 </samp>
 
 
