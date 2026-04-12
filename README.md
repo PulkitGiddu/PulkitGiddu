@@ -68,6 +68,7 @@ I am a **creative, disciplined, and goal‑oriented developer** with a passion f
   <img src="https://img.shields.io/badge/Google%20Colab-F9AB00?logo=google-colab&logoColor=white" />
 </p>
 
+![streak stats](https://github-readme-streak-stats.herokuapp.com/?user=PulkitGiddu&theme=dark&hide_border=false)  
 ---
 
 ## 🌐 Let's Connect
