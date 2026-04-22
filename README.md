@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Pulkit Giddu</h1>
-<h3 align="center">Full‑Stack Developer | Android Developer | DS • AI • ML Enthusiast</h3>
+<h3 align="center">Full‑Stack Developer | Android Developer </h3>
 
 <p align="center">
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30" />
@@ -7,13 +7,14 @@
 
 <p align="center">
   <a href="https://readme-typing-svg.herokuapp.com">
-    <img src="https://readme-typing-svg.herokuapp.com?lines=Electronics+%26+Telecommunication+Engineer;Full+Stack+Web+Developer;Android+Developer;DS+%7C+AI+%7C+ML+Enthusiast;Always+learning+new+things&center=true&width=500&height=45" />
+    <img src="https://readme-typing-svg.herokuapp.com?lines=Electronics+%26+Telecommunication+Engineer;Full+Stack+Web+Developer;Android+Developer;Always+learning+new+things&center=true&width=500&height=45" />
   </a>
 </p>
 
 ---
 
 ### 👨‍💻 About Me
+Working as SDE @HSBC
 
 I am a **creative, disciplined, and goal‑oriented developer** with a passion for building impactful and scalable solutions. I bring a strong sense of **time management, teamwork, and problem‑solving**, combined with excellent communication and organizational skills.
 
