@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="200" viewBox="0 0 380 200" role="img" aria-label="2+ years shipping software">
+  <defs>
+    <linearGradient id="cardbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121821"/>
+      <stop offset="100%" stop-color="#0B0F14"/>
+    </linearGradient>
+  </defs>
+  <rect width="380" height="200" fill="url(#cardbg)"/>
+  <rect x="0" y="0" width="380" height="2" fill="#5EEAD4" opacity="0.7"/>
+  <text x="28" y="42" fill="#5EEAD4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="3">YEARS</text>
+  <text x="28" y="112" fill="#E9EEF5" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700">2+</text>
+  <text x="28" y="154" fill="#8B95A5" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="15">shipping software</text>
+  <text x="28" y="178" fill="#8B95A5" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="13">HSBC · Wynklo · Erfinden</text>
+</svg>

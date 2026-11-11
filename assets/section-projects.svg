@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="72" viewBox="0 0 1200 72" role="img" aria-label="Selected projects">
+  <rect width="1200" height="72" fill="#0B0F14"/>
+  <rect x="48" y="34" width="48" height="2" fill="#5EEAD4"/>
+  <text x="112" y="42" fill="#E9EEF5" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Selected projects</text>
+  <text x="392" y="42" fill="#8B95A5" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="15">products &amp; builds with public footprints</text>
+</svg>
