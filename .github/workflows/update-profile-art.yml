@@ -1,0 +1,41 @@
+name: Update profile art
+
+# Scrapes real contribution data, redraws animated SVG cards, commits them back.
+# Daily cron + push to main + manual dispatch.
+
+"on":
+  schedule:
+    - cron: "23 6 * * *"   # ~06:23 UTC every day
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Scrape real contribution data (no auth needed)
+        env:
+          GH_PROFILE_USER: PulkitGiddu
+        run: python scripts/fetch_contributions.py
+
+      - name: Render README cards (hero, heatmap, activity, tiles, repos)
+        run: python scripts/render_readme_cards.py
+
+      - name: Commit updated art
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh profile cards [skip ci]"
+          file_pattern: "data/contributions.json cards/*.svg"
