@@ -1,91 +1,82 @@
-<h1 align="center">Hi, I'm Pulkit 👋</h1>
-<h3 align="center">Software Developer @ HSBC • Full Stack Engineer • Distributed Systems</h3>
+<!--
+  Visual system (expressed in SVG assets):
+  --ink: #0B0F14 | --slate: #121821 | --mist: #8B95A5
+  --paper: #E9EEF5 | --signal: #5EEAD4 | --warm: #E8C07A
+-->
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Focus-Backend%20%26%20System%20Design-black" />
-  <img src="https://img.shields.io/badge/Architecture-Microservices-blue" />
-  <img src="https://img.shields.io/badge/Cloud-AWS-orange" />
-  <img src="https://img.shields.io/badge/Streaming-Kafka-black" />
+  <img src="./assets/hero.svg" alt="Pulkit Giddu — Software Engineer at HSBC. Payments by day, products by choice." width="100%" />
 </p>
-
----
-
-## ⚡ Tech Arsenal
-
-### 🧠 Core Engineering
-<p>
-  <img src="https://skillicons.dev/icons?i=java,ts,js,python,postgres" />
-</p>
-
-### ⚙️ Backend & Scalability
-<p>
-  <img src="https://skillicons.dev/icons?i=spring,nodejs,kafka,redis" />
-</p>
-
-### 🌐 Frontend
-<p>
-  <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind" />
-</p>
-
-### ☁️ Cloud & Infra
-<p>
-  <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,vercel" />
-</p>
-
-### 🛠️ Tools
-<p>
-  <img src="https://skillicons.dev/icons?i=git,postman,linux" />
-</p>
-
----
-
-## 🧩 What I Build
-
-- ⚡ Scalable backend systems with **Spring Boot & Microservices**
-- 📡 Event-driven architectures using **Kafka & Redis**
-- 🌐 High-performance web apps with **React / Next.js**
-- ☁️ Cloud-native deployments (AWS, Docker, CI/CD)
-
----
-
-## 📈 Engineering Mindset
-
-- 🧠 System Design First Approach  
-- ⚙️ Performance & Scalability Focused  
-- 🔁 Clean Architecture + Maintainability  
-- 📊 Data-driven decision making  
-
----
-
-## 🌐 Portfolio
 
 <p align="center">
-  <a href="https://pulkit-portfolio-lemon.vercel.app/">
-    <img src="https://img.shields.io/badge/Portfolio-Visit-black?logo=vercel&logoColor=white"/>
-  </a>
+  <a href="https://pulkit-portfolio-lemon.vercel.app/"><strong>Portfolio</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/pulkit-giddu/"><strong>LinkedIn</strong></a>
+  &nbsp;·&nbsp;
+  <a href="mailto:pulkitgiddu09@gmail.com"><strong>Email</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://leetcode.com/u/PulkitGiddu/"><strong>LeetCode</strong></a>
 </p>
 
----
-
-## 📊 GitHub Stats
-
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PulkitGiddu&show_icons=true&theme=tokyonight&hide_border=true"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=PulkitGiddu&theme=tokyonight&hide_border=true"/>
+  <img src="./assets/divider.svg" alt="" width="100%" />
 </p>
 
----
+<p align="center">
+  <img src="./assets/now.svg" alt="Currently building Wynklo" width="100%" />
+</p>
 
-## 🤝 Let's Connect
+<br />
+
+### Focus
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/pulkit-giddu/">
-    <img src="https://img.shields.io/badge/LinkedIn-black?logo=linkedin&logoColor=0A66C2"/>
-  </a>
-  <a href="mailto:pulkitgiddu09@gmail.com">
-    <img src="https://img.shields.io/badge/Email-black?logo=gmail&logoColor=EA4335"/>
-  </a>
-  <a href="https://leetcode.com/u/PulkitGiddu/">
-    <img src="https://img.shields.io/badge/LeetCode-black?logo=leetcode&logoColor=FFA116"/>
-  </a>
+  <img src="./assets/focus.svg" alt="Payments, Systems, Web, Products" width="100%" />
+</p>
+
+At **HSBC** (Jul 2024 — present), I build distributed payment services with Java, Spring Boot, and event-driven architecture — including RBI SFMS integration, regulatory validation, and an observability dashboard across 40+ environments.
+
+Outside work: shipping **Wynklo**, with Bookit, SnatchMart, and Bet2Learn alongside.
+
+<br />
+
+### Stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=java,spring,kafka,redis,postgres,react,nodejs,aws,docker,kubernetes,git" alt="Java Spring Kafka Redis PostgreSQL React Node AWS Docker Kubernetes Git" />
+</p>
+
+<p align="center">
+  <sub>Java · Spring Boot · Kafka · Redis · PostgreSQL / Oracle · React · Node · AWS · Docker · Kubernetes</sub>
+</p>
+
+<br />
+
+### Selected signals
+
+| | |
+| :--- | :--- |
+| **HSBC** | Software Engineer — payments, reliability, quarterly releases |
+| **Marks** | Winner, CodeFury 2024 · Top 3, Hack The Winter 2026 · 350+ LeetCode |
+| **School** | B.Tech, Electronics & Telecommunication — VIT Pune (CGPA 8.03) |
+
+<br />
+
+### Activity
+
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=PulkitGiddu&show_icons=true&theme=transparent&hide_border=true&title_color=5EEAD4&icon_color=5EEAD4&text_color=8B95A5&bg_color=0B0F14" alt="GitHub stats" />
+  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=PulkitGiddu&theme=dark&hide_border=true&background=0B0F14&ring=5EEAD4&fire=5EEAD4&currStreakLabel=5EEAD4&sideLabels=8B95A5&sideNums=E9EEF5&dates=8B95A5" alt="GitHub streak" />
+</p>
+
+<p align="center">
+  <img src="./assets/divider.svg" alt="" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://pulkit-portfolio-lemon.vercel.app/">Visit portfolio</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:pulkitgiddu09@gmail.com">Book time via email</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/pulkit-giddu/">Connect on LinkedIn</a>
 </p>
