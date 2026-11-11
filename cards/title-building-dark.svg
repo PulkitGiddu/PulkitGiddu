@@ -21,4 +21,4 @@
 .ai{opacity:0;transform-box:fill-box;animation:arrowin .3s ease-out both}
 .ro{opacity:0;transform-box:fill-box;animation:roll .4s cubic-bezier(.22,.61,.36,1) both}
 @media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro{animation:none!important;opacity:1!important;transform:none!important}.rail{display:none!important}}
-</style><rect width="880" height="64" fill="#090B10"/><text class="r" style="animation-delay:3.15s" x="2" y="46" font-family="'Instrument Serif', Georgia, serif" font-size="34" fill="#F0EBE3">What I&#x27;m <tspan font-style="italic" fill="#C9956C">building</tspan></text></svg>
+</style><rect width="880" height="64" fill="#101418"/><text class="r" style="animation-delay:3.15s" x="2" y="46" font-family="'Instrument Serif', Georgia, serif" font-size="34" fill="#ECEEF2">What I&#x27;m <tspan font-style="italic" fill="#5B87B0">building</tspan></text></svg>

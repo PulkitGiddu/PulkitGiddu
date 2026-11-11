@@ -2,11 +2,11 @@
 """
 Render the profile README's cards as animated SVGs into cards/.
 
-Design: "Night Ledger" — obsidian surfaces + copper rail accent for a payments
-engineer / product builder (HSBC + Wynklo). Technique follows Avi Vashishta's
-animated SVG card system (not his paper/Three Worlds palette): standalone SVGs
-via <img>, inline CSS + SMIL, subset WOFF fonts as base64, calm staggered
-entrance, prefers-reduced-motion off, STATIC=1 end-state mode.
+Design: graphite charcoal + steel azure (confident, calm, precise — engineer /
+product-builder). Technique follows Avi Vashishta's animated SVG card system:
+standalone SVGs shown through <img>, inline CSS keyframes + SMIL, fonts as
+base64 WOFF data URIs, calm staggered top-to-bottom entrance,
+prefers-reduced-motion off, STATIC=1 end-state mode.
 
 Live contribution numbers come from data/contributions.json
 (fetch_contributions.py). Hand-set achievement figures below are taken from
@@ -34,22 +34,21 @@ ENVIRONMENTS = "40+"  # observability dashboard — confirm still accurate
 DEFECT_CUT = "75%"    # fewer recurring ops defects — confirm still accurate
 LEETCODE = "350+"     # existing README Marks row — confirm if grown
 
-# ---- brand tokens (Night Ledger) --------------------------------------------
-# Obsidian + copper rail — payments / product identity.
-# Avoided: Avi paper/Three Worlds, neon mint, purple AI-slop, cream+terracotta,
-# and generic steel-blue GitHub clones.
-INK = "#090B10"          # obsidian page
-SLATE = "#12161E"        # card surface
-SLATE_DEEP = "#0C0F14"   # deeper inset
-MIST = "#8A919C"         # muted labels
-PAPER = "#F0EBE3"        # warm off-white text
-PAPER_SOFT = "#B8B0A4"   # secondary text
-SIGNAL = "#C9956C"       # copper rail — primary accent
-SIGNAL_DIM = "#8F6A48"   # mid copper / tile fill
-SIGNAL_DEEP = "#3D2E22"  # deep copper / tile fill
-WARM = "#C9956C"         # alias — copper leads; IMPACT uses deep copper ground
-RULE = "#1C222C"         # ledger hairlines
-BAR = "#2A323E"          # default activity bars
+# ---- brand tokens (graphite + steel azure) ---------------------------------
+# Confident / calm / precise — restrained neutrals + one steel accent.
+# Avoided: neon mint, purple AI-slop, cream+terracotta, Night Ledger copper.
+INK = "#101418"          # page charcoal
+SLATE = "#171B22"        # card surface
+SLATE_DEEP = "#12151B"   # deeper inset
+MIST = "#7D8694"         # muted labels
+PAPER = "#ECEEF2"        # primary text
+PAPER_SOFT = "#B4BBC6"   # secondary text
+SIGNAL = "#5B87B0"       # steel azure — primary accent
+SIGNAL_DIM = "#3F6488"   # mid accent / tile fill
+SIGNAL_DEEP = "#243A52"  # deep accent / tile fill
+WARM = "#A8906C"         # soft brass (sparing secondary)
+RULE = "#252A33"         # hairlines
+BAR = "#3A4352"          # default activity bars
 W = 880  # full card width ≈ GitHub README column at 100%
 
 SERIF = "'Instrument Serif', Georgia, serif"
@@ -158,7 +157,7 @@ def text_lines(x, y, lines, lh, attrs):
 # ---- 1 · hero -----------------------------------------------------------------
 def hero():
     h = 400
-    # Signature motion: a signal travels the payment rail under the tagline.
+    # Signature motion: a steel signal travels the rule under the tagline.
     rail = ""
     if not os.environ.get("STATIC"):
         rail = f"""
@@ -179,8 +178,8 @@ def hero():
     <stop offset="100%" stop-color="{SLATE_DEEP}"/>
   </linearGradient>
   <radialGradient id="glow" cx="88%" cy="18%" r="48%">
-    <stop offset="0%" stop-color="{SIGNAL}" stop-opacity="0.10"/>
-    <stop offset="60%" stop-color="{SIGNAL_DIM}" stop-opacity="0.04"/>
+    <stop offset="0%" stop-color="{SIGNAL}" stop-opacity="0.12"/>
+    <stop offset="60%" stop-color="{SIGNAL_DIM}" stop-opacity="0.05"/>
     <stop offset="100%" stop-color="{INK}" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="520" y2="0">
@@ -195,7 +194,7 @@ def hero():
 <g clip-path="url(#frame)">
   <rect width="{W}" height="{h}" rx="12" fill="url(#bg)"/>
   <rect width="{W}" height="{h}" fill="url(#glow)"/>
-  <!-- Ledger margin -->
+  <!-- Steel accent margin -->
   <rect x="28" y="36" width="2" height="{h - 72}" fill="{SIGNAL}" opacity="0.55"/>
   <g class="f" {d(0)}>
     <rect class="live" x="52" y="48" width="7" height="7" rx="1" fill="{SIGNAL}"/>
@@ -211,23 +210,24 @@ def hero():
     <text x="52" y="368" font-family="{MONO}" font-size="12" fill="{PAPER}">portfolio</text>
     <text class="nu" x="124" y="368" font-family="{MONO}" font-size="12" fill="{SIGNAL}">&#8599;</text>
   </g>
-  <!-- Right: personal panel (geography + mindset — not work/tech) -->
+  <!-- Right: personal profile panel (no work/tech laundry list) -->
   <g class="f" {d(0.5)} transform="translate(548 72)">
     <rect x="0" y="0" width="280" height="256" rx="10" fill="{SLATE_DEEP}" stroke="{RULE}" stroke-width="1"/>
-    <rect x="0" y="0" width="3" height="256" fill="{SIGNAL}" opacity="0.85"/>
-    <text x="24" y="34" font-family="{MONO}" font-size="11" letter-spacing="2" fill="{SIGNAL}">ABOUT</text>
-    <text x="236" y="34" text-anchor="end" font-family="{SERIF}" font-size="18" fill="{SIGNAL}">PG</text>
+    <rect x="0" y="0" width="3" height="256" fill="{SIGNAL}" opacity="0.9"/>
+    <text x="24" y="34" font-family="{MONO}" font-size="11" letter-spacing="2.2" fill="{SIGNAL}">PROFILE</text>
+    <text x="256" y="34" text-anchor="end" font-family="{MONO}" font-size="11" letter-spacing="1.5" fill="{MIST}">PG</text>
+    <line x1="24" y1="48" x2="256" y2="48" stroke="{RULE}" stroke-width="1"/>
 
-    <text x="24" y="78" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Based in Pune</text>
-    <text x="24" y="100" font-family="{SANS}" font-size="13" fill="{PAPER_SOFT}">India &#183; IST</text>
-    <line x1="24" y1="118" x2="256" y2="118" stroke="{RULE}" stroke-width="1"/>
+    <text x="24" y="80" font-family="{MONO}" font-size="10" letter-spacing="1.8" fill="{MIST}">BASE</text>
+    <text x="24" y="104" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Pune, India</text>
+    <line x1="24" y1="124" x2="256" y2="124" stroke="{RULE}" stroke-width="1"/>
 
-    <text x="24" y="152" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Quiet builder</text>
-    <text x="24" y="174" font-family="{SANS}" font-size="13" fill="{PAPER_SOFT}">Ships when curious &#8212; by choice</text>
-    <line x1="24" y1="192" x2="256" y2="192" stroke="{RULE}" stroke-width="1"/>
+    <text x="24" y="156" font-family="{MONO}" font-size="10" letter-spacing="1.8" fill="{MIST}">APPROACH</text>
+    <text x="24" y="180" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Curious · deliberate</text>
+    <line x1="24" y1="200" x2="256" y2="200" stroke="{RULE}" stroke-width="1"/>
 
-    <text x="24" y="226" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Always learning</text>
-    <text x="24" y="248" font-family="{SANS}" font-size="13" fill="{PAPER_SOFT}">Problem-solving as a habit</text>
+    <text x="24" y="228" font-family="{MONO}" font-size="10" letter-spacing="1.8" fill="{MIST}">PRACTICE</text>
+    <text x="24" y="248" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Continuous learning</text>
   </g>
 </g>
 """
@@ -494,8 +494,8 @@ def section_title(slug, text, italic, theme, delay=4.4):
     )
 
 
-# ---- 5 · copper-rail contribution graph --------------------------------------
-RAIL = [SLATE_DEEP, "#2A221C", "#4A382C", "#6B5040", "#9A7352", SIGNAL]
+# ---- 5 · steel contribution graph --------------------------------------------
+STEEL = [SLATE_DEEP, "#1E2A38", "#2A4058", "#3A5A78", "#4A7398", SIGNAL]
 
 
 def level_for(c):
@@ -519,7 +519,7 @@ def heatmap(data):
         delay = 0.5 + col * 0.018 + row * 0.012
         cells.append(
             f'<rect class="f" style="animation-delay:{delay:.2f}s" x="{gx + col * step}" y="{gy + row * step}" '
-            f'width="{cell}" height="{cell}" rx="2.5" fill="{RAIL[level_for(c)]}">'
+            f'width="{cell}" height="{cell}" rx="2.5" fill="{STEEL[level_for(c)]}">'
             f'<title>{day["date"]}: {c} contribution{"s" if c != 1 else ""}</title></rect>'
         )
     ncols = (len(days) + lead + 6) // 7
@@ -529,22 +529,22 @@ def heatmap(data):
         for col, m in months
         if col < ncols - 12
     )
-    legend_x = right - len(RAIL) * 14
+    legend_x = right - len(STEEL) * 14
     legend = "".join(
         f'<rect x="{legend_x + i * 14}" y="{gy + 7 * step + 6}" width="11" height="11" rx="2.5" fill="{c}"/>'
-        for i, c in enumerate(RAIL)
+        for i, c in enumerate(STEEL)
     )
     h = gy + 7 * step + 44
     body = f"""
 <rect width="{W}" height="{h}" rx="12" fill="{SLATE}"/>
 <rect x="0" y="0" width="{W}" height="1" fill="{SIGNAL}" opacity="0.25"/>
-<text class="r" {d(0.4)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{PAPER}">Every day, <tspan font-style="italic" fill="{SIGNAL}">on the rail</tspan></text>
+<text class="r" {d(0.4)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{PAPER}">Every day, <tspan font-style="italic" fill="{SIGNAL}">in steel</tspan></text>
 <text class="f" {d(0.4)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MIST}">REFRESHED DAILY</text>
 {''.join(cells)}
 <g class="f" {d(1.25)}>{labels}
 <text x="{legend_x - 8}" y="{gy + 7 * step + 16}" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MIST}">less</text>
 {legend}
-<text x="{legend_x + len(RAIL) * 14 + 2}" y="{gy + 7 * step + 16}" font-family="{MONO}" font-size="11" fill="{MIST}">more</text></g>
+<text x="{legend_x + len(STEEL) * 14 + 2}" y="{gy + 7 * step + 16}" font-family="{MONO}" font-size="11" fill="{MIST}">more</text></g>
 """
     write(
         "heatmap.svg",
@@ -605,8 +605,8 @@ if __name__ == "__main__":
     tile(
         "impact",
         "IMPACT",
-        "#2A221C",
-        SIGNAL,
+        "#2A261F",
+        WARM,
         DEFECT_CUT,
         "fewer",
         "Recurring operational defects cut after incident triage.",

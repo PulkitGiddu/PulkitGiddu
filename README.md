@@ -2,9 +2,9 @@
   Every card is an animated SVG from scripts/render_readme_cards.py, refreshed
   daily by .github/workflows/update-profile-art.yml.
 
-  Brand: Night Ledger — obsidian (#090B10 / #12161E) + copper rail (#C9956C).
+  Brand: graphite (#101418 / #171B22) + steel azure (#5B87B0) + soft brass (#A8906C).
   Technique: SVG via <img>, inline CSS keyframes + SMIL, subset WOFF fonts as
-  base64, calm staggered entrance + hero rail pulse, prefers-reduced-motion off,
+  base64, calm staggered entrance + hero steel pulse, prefers-reduced-motion off,
   STATIC=1 for screenshottable end state.
 
   Spacing is baked into the SVGs — keep rows free of blank lines between sibling
@@ -12,7 +12,7 @@
 -->
 <div align="center">
 <a href="https://pulkit-portfolio-lemon.vercel.app/"><img src="./cards/hero.svg" width="100%" alt="Pulkit Giddu. Software engineer at HSBC. Payments by day, products by choice." /></a><br>
-<img src="./cards/heatmap.svg" width="100%" alt="Contribution graph on the copper rail, refreshed daily" /><br>
+<img src="./cards/heatmap.svg" width="100%" alt="Contribution graph in steel azure, refreshed daily" /><br>
 <img src="./cards/activity.svg" width="100%" alt="Contributions in the last 12 months, by month, with streak and busiest day" /><br>
 <a href="https://www.linkedin.com/in/pulkit-giddu/"><img src="./cards/years.svg" width="32.5%" alt="YEARS: 2+ years shipping software" /></a><a href="https://pulkit-portfolio-lemon.vercel.app/"><img src="./cards/scope.svg" width="32.5%" alt="SCOPE: 40+ environments on the observability dashboard" /></a><a href="https://pulkit-portfolio-lemon.vercel.app/"><img src="./cards/impact.svg" width="32.5%" alt="IMPACT: 75% fewer recurring operational defects" /></a><br>
 <picture><source media="(prefers-color-scheme: dark)" srcset="./cards/title-building-dark.svg" /><img src="./cards/title-building-light.svg" width="100%" alt="What I'm building" /></picture><br>
@@ -26,27 +26,27 @@
 ### Tools I use
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Java-12161E?style=flat-square&logo=openjdk&logoColor=C9956C" alt="Java" />
-  <img src="https://img.shields.io/badge/Spring_Boot-12161E?style=flat-square&logo=springboot&logoColor=C9956C" alt="Spring Boot" />
-  <img src="https://img.shields.io/badge/Kafka-12161E?style=flat-square&logo=apachekafka&logoColor=C9956C" alt="Kafka" />
-  <img src="https://img.shields.io/badge/Redis-12161E?style=flat-square&logo=redis&logoColor=C9956C" alt="Redis" />
-  <img src="https://img.shields.io/badge/PostgreSQL-12161E?style=flat-square&logo=postgresql&logoColor=C9956C" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/TypeScript-12161E?style=flat-square&logo=typescript&logoColor=C9956C" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/React-12161E?style=flat-square&logo=react&logoColor=C9956C" alt="React" />
-  <img src="https://img.shields.io/badge/Node.js-12161E?style=flat-square&logo=nodedotjs&logoColor=C9956C" alt="Node.js" />
-  <img src="https://img.shields.io/badge/AWS-12161E?style=flat-square&logo=amazonwebservices&logoColor=C9956C" alt="AWS" />
-  <img src="https://img.shields.io/badge/Docker-12161E?style=flat-square&logo=docker&logoColor=C9956C" alt="Docker" />
-  <img src="https://img.shields.io/badge/Kubernetes-12161E?style=flat-square&logo=kubernetes&logoColor=C9956C" alt="Kubernetes" />
-  <img src="https://img.shields.io/badge/Git-12161E?style=flat-square&logo=git&logoColor=C9956C" alt="Git" />
+  <img src="https://img.shields.io/badge/Java-171B22?style=flat-square&logo=openjdk&logoColor=5B87B0" alt="Java" />
+  <img src="https://img.shields.io/badge/Spring_Boot-171B22?style=flat-square&logo=springboot&logoColor=5B87B0" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/Kafka-171B22?style=flat-square&logo=apachekafka&logoColor=5B87B0" alt="Kafka" />
+  <img src="https://img.shields.io/badge/Redis-171B22?style=flat-square&logo=redis&logoColor=5B87B0" alt="Redis" />
+  <img src="https://img.shields.io/badge/PostgreSQL-171B22?style=flat-square&logo=postgresql&logoColor=5B87B0" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/TypeScript-171B22?style=flat-square&logo=typescript&logoColor=5B87B0" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/React-171B22?style=flat-square&logo=react&logoColor=5B87B0" alt="React" />
+  <img src="https://img.shields.io/badge/Node.js-171B22?style=flat-square&logo=nodedotjs&logoColor=5B87B0" alt="Node.js" />
+  <img src="https://img.shields.io/badge/AWS-171B22?style=flat-square&logo=amazonwebservices&logoColor=5B87B0" alt="AWS" />
+  <img src="https://img.shields.io/badge/Docker-171B22?style=flat-square&logo=docker&logoColor=5B87B0" alt="Docker" />
+  <img src="https://img.shields.io/badge/Kubernetes-171B22?style=flat-square&logo=kubernetes&logoColor=5B87B0" alt="Kubernetes" />
+  <img src="https://img.shields.io/badge/Git-171B22?style=flat-square&logo=git&logoColor=5B87B0" alt="Git" />
 </p>
 
 <br />
 
 <p align="center">
-  <a href="https://pulkit-portfolio-lemon.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-12161E?style=for-the-badge&logo=vercel&logoColor=C9956C" alt="Portfolio" /></a>
-  <a href="https://www.linkedin.com/in/pulkit-giddu/"><img src="https://img.shields.io/badge/LinkedIn-12161E?style=for-the-badge&logo=linkedin&logoColor=C9956C" alt="LinkedIn" /></a>
-  <a href="mailto:pulkitgiddu09@gmail.com"><img src="https://img.shields.io/badge/Email-12161E?style=for-the-badge&logo=gmail&logoColor=C9956C" alt="Email" /></a>
-  <a href="https://leetcode.com/u/PulkitGiddu/"><img src="https://img.shields.io/badge/LeetCode-12161E?style=for-the-badge&logo=leetcode&logoColor=C9956C" alt="LeetCode" /></a>
-  <a href="https://www.wynklo.com/"><img src="https://img.shields.io/badge/Wynklo-12161E?style=for-the-badge&logoColor=C9956C&color=12161E" alt="Wynklo" /></a>
-  <a href="https://www.clubmates.in/"><img src="https://img.shields.io/badge/Clubmates-12161E?style=for-the-badge&logoColor=C9956C&color=12161E" alt="Clubmates" /></a>
+  <a href="https://pulkit-portfolio-lemon.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-171B22?style=for-the-badge&logo=vercel&logoColor=5B87B0" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/pulkit-giddu/"><img src="https://img.shields.io/badge/LinkedIn-171B22?style=for-the-badge&logo=linkedin&logoColor=5B87B0" alt="LinkedIn" /></a>
+  <a href="mailto:pulkitgiddu09@gmail.com"><img src="https://img.shields.io/badge/Email-171B22?style=for-the-badge&logo=gmail&logoColor=5B87B0" alt="Email" /></a>
+  <a href="https://leetcode.com/u/PulkitGiddu/"><img src="https://img.shields.io/badge/LeetCode-171B22?style=for-the-badge&logo=leetcode&logoColor=5B87B0" alt="LeetCode" /></a>
+  <a href="https://www.wynklo.com/"><img src="https://img.shields.io/badge/Wynklo-171B22?style=for-the-badge&logoColor=5B87B0&color=171B22" alt="Wynklo" /></a>
+  <a href="https://www.clubmates.in/"><img src="https://img.shields.io/badge/Clubmates-171B22?style=for-the-badge&logoColor=5B87B0&color=171B22" alt="Clubmates" /></a>
 </p>

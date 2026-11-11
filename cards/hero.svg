@@ -24,18 +24,18 @@
 </style>
 <defs>
   <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#090B10"/><stop offset="60%" stop-color="#12161E"/>
-    <stop offset="100%" stop-color="#0C0F14"/>
+    <stop offset="0%" stop-color="#101418"/><stop offset="60%" stop-color="#171B22"/>
+    <stop offset="100%" stop-color="#12151B"/>
   </linearGradient>
   <radialGradient id="glow" cx="88%" cy="18%" r="48%">
-    <stop offset="0%" stop-color="#C9956C" stop-opacity="0.10"/>
-    <stop offset="60%" stop-color="#8F6A48" stop-opacity="0.04"/>
-    <stop offset="100%" stop-color="#090B10" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#5B87B0" stop-opacity="0.12"/>
+    <stop offset="60%" stop-color="#3F6488" stop-opacity="0.05"/>
+    <stop offset="100%" stop-color="#101418" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="520" y2="0">
-    <stop offset="0" stop-color="#F0EBE3"/><stop offset=".46" stop-color="#F0EBE3"/>
-    <stop offset=".5" stop-color="#C9956C"/><stop offset=".54" stop-color="#F0EBE3"/>
-    <stop offset="1" stop-color="#F0EBE3"/>
+    <stop offset="0" stop-color="#ECEEF2"/><stop offset=".46" stop-color="#ECEEF2"/>
+    <stop offset=".5" stop-color="#5B87B0"/><stop offset=".54" stop-color="#ECEEF2"/>
+    <stop offset="1" stop-color="#ECEEF2"/>
     <animateTransform attributeName="gradientTransform" type="translate" values="-520 0;520 0;520 0"
       keyTimes="0;.4;1" dur="12s" begin="1.8s" repeatCount="indefinite"/>
   </linearGradient>
@@ -44,47 +44,48 @@
 <g clip-path="url(#frame)">
   <rect width="880" height="400" rx="12" fill="url(#bg)"/>
   <rect width="880" height="400" fill="url(#glow)"/>
-  <!-- Ledger margin -->
-  <rect x="28" y="36" width="2" height="328" fill="#C9956C" opacity="0.55"/>
+  <!-- Steel accent margin -->
+  <rect x="28" y="36" width="2" height="328" fill="#5B87B0" opacity="0.55"/>
   <g class="f" style="animation-delay:0.00s">
-    <rect class="live" x="52" y="48" width="7" height="7" rx="1" fill="#C9956C"/>
-    <text x="70" y="56" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.6" fill="#8A919C">SOFTWARE ENGINEER  ·  HSBC  ·  PUNE</text>
+    <rect class="live" x="52" y="48" width="7" height="7" rx="1" fill="#5B87B0"/>
+    <text x="70" y="56" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.6" fill="#7D8694">SOFTWARE ENGINEER  ·  HSBC  ·  PUNE</text>
   </g>
-  <text class="r" style="animation-delay:0.08s" x="52" y="150" font-family="'Instrument Serif', Georgia, serif" font-size="68" letter-spacing="-1.2" fill="#F0EBE3">Pulkit</text>
+  <text class="r" style="animation-delay:0.08s" x="52" y="150" font-family="'Instrument Serif', Georgia, serif" font-size="68" letter-spacing="-1.2" fill="#ECEEF2">Pulkit</text>
   <text class="r" style="animation-delay:0.18s" x="52" y="222" font-family="'Instrument Serif', Georgia, serif" font-style="italic" font-size="68" letter-spacing="-1.2" fill="url(#shine)">Giddu</text>
   <g class="r" style="animation-delay:0.30s">
-    <text x="52" y="268" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" fill="#B8B0A4">Payments at HSBC. Products of my own —</text><text x="52" y="292" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" fill="#B8B0A4">currently building Wynklo.</text>
+    <text x="52" y="268" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" fill="#B4BBC6">Payments at HSBC. Products of my own —</text><text x="52" y="292" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" fill="#B4BBC6">currently building Wynklo.</text>
   </g>
   
 <g class="rail" opacity="0.9">
-  <line x1="56" y1="328" x2="420" y2="328" stroke="#1C222C" stroke-width="1"/>
-  <circle r="3.5" fill="#C9956C">
+  <line x1="56" y1="328" x2="420" y2="328" stroke="#252A33" stroke-width="1"/>
+  <circle r="3.5" fill="#5B87B0">
     <animate attributeName="cx" values="56;420;56" keyTimes="0;0.5;1" dur="5.5s" repeatCount="indefinite"/>
     <animate attributeName="cy" values="328;328;328" dur="5.5s" repeatCount="indefinite"/>
   </circle>
 </g>
 
   <g class="f" style="animation-delay:0.45s">
-    <text x="52" y="368" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#F0EBE3">portfolio</text>
-    <text class="nu" x="124" y="368" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#C9956C">&#8599;</text>
+    <text x="52" y="368" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#ECEEF2">portfolio</text>
+    <text class="nu" x="124" y="368" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#5B87B0">&#8599;</text>
   </g>
-  <!-- Right: personal panel (geography + mindset — not work/tech) -->
+  <!-- Right: personal profile panel (no work/tech laundry list) -->
   <g class="f" style="animation-delay:0.50s" transform="translate(548 72)">
-    <rect x="0" y="0" width="280" height="256" rx="10" fill="#0C0F14" stroke="#1C222C" stroke-width="1"/>
-    <rect x="0" y="0" width="3" height="256" fill="#C9956C" opacity="0.85"/>
-    <text x="24" y="34" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="2" fill="#C9956C">ABOUT</text>
-    <text x="236" y="34" text-anchor="end" font-family="'Instrument Serif', Georgia, serif" font-size="18" fill="#C9956C">PG</text>
+    <rect x="0" y="0" width="280" height="256" rx="10" fill="#12151B" stroke="#252A33" stroke-width="1"/>
+    <rect x="0" y="0" width="3" height="256" fill="#5B87B0" opacity="0.9"/>
+    <text x="24" y="34" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="2.2" fill="#5B87B0">PROFILE</text>
+    <text x="256" y="34" text-anchor="end" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.5" fill="#7D8694">PG</text>
+    <line x1="24" y1="48" x2="256" y2="48" stroke="#252A33" stroke-width="1"/>
 
-    <text x="24" y="78" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#F0EBE3">Based in Pune</text>
-    <text x="24" y="100" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="13" fill="#B8B0A4">India &#183; IST</text>
-    <line x1="24" y1="118" x2="256" y2="118" stroke="#1C222C" stroke-width="1"/>
+    <text x="24" y="80" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1.8" fill="#7D8694">BASE</text>
+    <text x="24" y="104" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#ECEEF2">Pune, India</text>
+    <line x1="24" y1="124" x2="256" y2="124" stroke="#252A33" stroke-width="1"/>
 
-    <text x="24" y="152" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#F0EBE3">Quiet builder</text>
-    <text x="24" y="174" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="13" fill="#B8B0A4">Ships when curious &#8212; by choice</text>
-    <line x1="24" y1="192" x2="256" y2="192" stroke="#1C222C" stroke-width="1"/>
+    <text x="24" y="156" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1.8" fill="#7D8694">APPROACH</text>
+    <text x="24" y="180" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#ECEEF2">Curious · deliberate</text>
+    <line x1="24" y1="200" x2="256" y2="200" stroke="#252A33" stroke-width="1"/>
 
-    <text x="24" y="226" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#F0EBE3">Always learning</text>
-    <text x="24" y="248" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="13" fill="#B8B0A4">Problem-solving as a habit</text>
+    <text x="24" y="228" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1.8" fill="#7D8694">PRACTICE</text>
+    <text x="24" y="248" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#ECEEF2">Continuous learning</text>
   </g>
 </g>
 </svg>

@@ -22,11 +22,11 @@
 .ro{opacity:0;transform-box:fill-box;animation:roll .4s cubic-bezier(.22,.61,.36,1) both}
 @media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro{animation:none!important;opacity:1!important;transform:none!important}.rail{display:none!important}}
 </style><g transform="translate(8.000 0)">
-<rect width="285.3333333333333" height="176" rx="14" fill="#12161E"/>
+<rect width="285.3333333333333" height="176" rx="14" fill="#171B22"/>
 <g class="r" style="animation-delay:3.54s">
-  <rect x="24" y="30" width="8" height="8" rx="2" fill="#C9956C"/>
-  <text x="40" y="39" font-family="Geist, system-ui, -apple-system, sans-serif" font-weight="600" font-size="17" fill="#F0EBE3">Clubmates</text>
-  <text x="24" y="72" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#B8B0A4">Find people for the night you</text><text x="24" y="93" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#B8B0A4">already want — live product.</text>
-  <text x="24" y="152" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8A919C">Product  ·  live</text>
+  <rect x="24" y="30" width="8" height="8" rx="2" fill="#5B87B0"/>
+  <text x="40" y="39" font-family="Geist, system-ui, -apple-system, sans-serif" font-weight="600" font-size="17" fill="#ECEEF2">Clubmates</text>
+  <text x="24" y="72" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#B4BBC6">Find people for the night you</text><text x="24" y="93" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="14" fill="#B4BBC6">already want — live product.</text>
+  <text x="24" y="152" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#7D8694">Product  ·  live</text>
 </g>
 </g></svg>
