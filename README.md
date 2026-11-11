@@ -2,17 +2,17 @@
   Every card is an animated SVG from scripts/render_readme_cards.py, refreshed
   daily by .github/workflows/update-profile-art.yml.
 
-  Brand: nocturnal ink (#0B0F14) + mint signal (#5EEAD4) + warm gold (#E8C07A).
+  Brand: graphite (#101418 / #171B22) + steel azure (#5B87B0) + soft brass (#A8906C).
   Technique: SVG via <img>, inline CSS keyframes + SMIL, subset WOFF fonts as
-  base64, staggered top-to-bottom entrance, prefers-reduced-motion off, STATIC=1
-  for screenshottable end state.
+  base64, calm staggered top-to-bottom entrance, prefers-reduced-motion off,
+  STATIC=1 for screenshottable end state.
 
   Spacing is baked into the SVGs — keep rows free of blank lines between sibling
   <img> tags so GitHub keeps three-across layouts tight.
 -->
 <div align="center">
 <a href="https://pulkit-portfolio-lemon.vercel.app/"><img src="./cards/hero.svg" width="100%" alt="Pulkit Giddu. Software engineer at HSBC. Payments by day, products by choice." /></a><br>
-<img src="./cards/heatmap.svg" width="100%" alt="Contribution graph in mint, refreshed daily" /><br>
+<img src="./cards/heatmap.svg" width="100%" alt="Contribution graph in steel azure, refreshed daily" /><br>
 <img src="./cards/activity.svg" width="100%" alt="Contributions in the last 12 months, by month, with streak and busiest day" /><br>
 <a href="https://www.linkedin.com/in/pulkit-giddu/"><img src="./cards/years.svg" width="32.5%" alt="YEARS: 2+ years shipping software" /></a><a href="https://pulkit-portfolio-lemon.vercel.app/"><img src="./cards/scope.svg" width="32.5%" alt="SCOPE: 40+ environments on the observability dashboard" /></a><a href="https://pulkit-portfolio-lemon.vercel.app/"><img src="./cards/impact.svg" width="32.5%" alt="IMPACT: 75% fewer recurring operational defects" /></a><br>
 <picture><source media="(prefers-color-scheme: dark)" srcset="./cards/title-building-dark.svg" /><img src="./cards/title-building-light.svg" width="100%" alt="What I'm building" /></picture><br>
