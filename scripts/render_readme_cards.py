@@ -369,34 +369,76 @@ def activity(data):
 
 # ---- 4 · featured project / repo cards ---------------------------------------
 REPO_W, REPO_H = 880 / 3 - 8, 176
-# Featured builds with public footprints. SnatchMart / Bet2Learn stay TBD (no personal repos yet).
-REPOS = [
+
+# Each entry: (slug, display name, blurb, lang/label, color, href, github_full_name|None)
+# "What I'm building" — current products. Snatch Mart has no public personal repo yet
+# (showcased via Wynklo); Clubmates links to the live product site.
+BUILDING = [
     (
-        "Book-IT",
+        "wynklo",
+        "Wynklo",
+        "Digital product studio — websites, apps, and platforms shipping now.",
+        "Product",
+        SIGNAL,
+        "https://www.wynklo.com/",
+        "Wynklo/wynklo",
+    ),
+    (
+        "snatch-mart",
+        "Snatch Mart",
+        "Commerce product shipped with Wynklo — public repo TBD.",
+        "Commerce",
+        WARM,
+        "https://www.wynklo.com/",
+        None,
+    ),
+    (
+        "clubmates",
+        "Clubmates",
+        "Find people for the night you already want — live product.",
+        "Product",
+        SIGNAL,
+        "https://www.clubmates.in/",
+        None,
+    ),
+]
+
+# "What I built" — shipped with public GitHub footprints.
+# Third card: VEat — clearest description + star among remaining public repos
+# (spyprice also solid; portfolio-frontend is newer but undescribed).
+BUILT = [
+    (
+        "bookit",
+        "Bookit",
         "Booking side product — open for contributions on GitHub.",
         "Docs",
         SIGNAL,
+        "https://github.com/PulkitGiddu/Book-IT",
         "PulkitGiddu/Book-IT",
     ),
     (
-        "AadhaarConnect",
-        "Identity-connect experiment, also featured in Wynklo's work.",
+        "aadhaar-connect",
+        "Aadhaar Connect",
+        "Identity-connect build, also featured in Wynklo's work.",
         "JavaScript",
         SIGNAL,
+        "https://github.com/PulkitGiddu/AadhaarConnect",
         "PulkitGiddu/AadhaarConnect",
     ),
     (
+        "veat",
         "VEat",
         "A simple approach to order food in college canteens.",
         "Java",
         WARM,
+        "https://github.com/PulkitGiddu/VEat",
         "PulkitGiddu/VEat",
     ),
 ]
 
 
-def repo_card(i, name, desc, lang, color, stars, full_name):
-    delay = 4.6 + i * 0.12
+def repo_card(i, slug, name, desc, lang, color, stars, delay_base):
+    delay = delay_base + i * 0.12
     meta = f"{lang}  ·  ★ {stars}" if stars else f"{lang}  ·  live"
     body = f"""
 <rect width="{REPO_W}" height="{REPO_H}" rx="14" fill="{SLATE}"/>
@@ -408,7 +450,7 @@ def repo_card(i, name, desc, lang, color, stars, full_name):
 </g>
 """
     write(
-        f"repo-{name.lower()}.svg",
+        f"repo-{slug}.svg",
         svg(
             REPO_W,
             REPO_H,
@@ -421,9 +463,9 @@ def repo_card(i, name, desc, lang, color, stars, full_name):
     )
 
 
-def section_title(text, italic, theme):
+def section_title(slug, text, italic, theme, delay=4.4):
     # Profile README sits on GitHub's dark chrome for most users; ink cards stay dark.
-    # Light theme variant uses ink text on transparent so GH light mode still reads.
+    # Light theme variant uses ink text so GH light mode still reads.
     if theme == "dark":
         fg = PAPER
         italic_fill = SIGNAL
@@ -434,10 +476,13 @@ def section_title(text, italic, theme):
         bg = f'<rect width="{W}" height="64" fill="#ffffff"/>'
     body = (
         f"{bg}"
-        f'<text class="r" {d(4.4)} x="2" y="46" font-family="{SERIF}" font-size="34" fill="{fg}">{escape(text)} '
+        f'<text class="r" {d(delay)} x="2" y="46" font-family="{SERIF}" font-size="34" fill="{fg}">{escape(text)} '
         f'<tspan font-style="italic" fill="{italic_fill}">{escape(italic)}</tspan></text>'
     )
-    write(f"title-coding-{theme}.svg", svg(W, 64, body, ["serif", "serif-i"], f"{text} {italic}", bottom=0))
+    write(
+        f"title-{slug}-{theme}.svg",
+        svg(W, 64, body, ["serif", "serif-i"], f"{text} {italic}", bottom=0),
+    )
 
 
 # ---- 5 · mint contribution graph ---------------------------------------------
@@ -503,15 +548,17 @@ def heatmap(data):
     )
 
 
-def repo_stars():
+def repo_stars(projects):
     stars = {}
     try:
         import requests
 
-        for name, _desc, _lang, _color, full_name in REPOS:
+        for slug, _name, _desc, _lang, _color, _href, full_name in projects:
+            if not full_name:
+                continue
             r = requests.get(f"https://api.github.com/repos/{full_name}", timeout=10)
             if r.ok:
-                stars[name] = r.json().get("stargazers_count", 0)
+                stars[slug] = r.json().get("stargazers_count", 0)
     except Exception as e:
         print(f"stars unavailable: {e}")
     return stars
@@ -556,8 +603,15 @@ if __name__ == "__main__":
         3.6,
         2,
     )
-    section_title("What I'm", "building", "dark")
-    section_title("What I'm", "building", "light")
-    stars = repo_stars()
-    for i, (name, desc, lang, color, full_name) in enumerate(REPOS):
-        repo_card(i, name, desc, lang, color, stars.get(name), full_name)
+
+    section_title("building", "What I'm", "building", "dark", delay=4.4)
+    section_title("building", "What I'm", "building", "light", delay=4.4)
+    building_stars = repo_stars(BUILDING)
+    for i, (slug, name, desc, lang, color, _href, _gh) in enumerate(BUILDING):
+        repo_card(i, slug, name, desc, lang, color, building_stars.get(slug), 4.6)
+
+    section_title("built", "What I", "built", "dark", delay=5.1)
+    section_title("built", "What I", "built", "light", delay=5.1)
+    built_stars = repo_stars(BUILT)
+    for i, (slug, name, desc, lang, color, _href, _gh) in enumerate(BUILT):
+        repo_card(i, slug, name, desc, lang, color, built_stars.get(slug), 5.3)

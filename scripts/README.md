@@ -10,4 +10,5 @@ python scripts/render_readme_cards.py          # animated
 STATIC=1 python scripts/render_readme_cards.py # end-state for screenshots
 ```
 
-Hand-set achievement numbers live at the top of `render_readme_cards.py`.
+Hand-set achievement numbers and featured project lists (`BUILDING` / `BUILT`)
+live at the top of `render_readme_cards.py`.
