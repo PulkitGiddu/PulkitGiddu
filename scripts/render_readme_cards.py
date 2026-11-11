@@ -211,10 +211,26 @@ def hero():
     <text x="52" y="368" font-family="{MONO}" font-size="12" fill="{PAPER}">portfolio</text>
     <text class="nu" x="124" y="368" font-family="{MONO}" font-size="12" fill="{SIGNAL}">&#8599;</text>
   </g>
-  <!-- Monogram mark -->
-  <g class="f" {d(0.55)} transform="translate(760 140)">
-    <rect x="0" y="0" width="72" height="72" fill="none" stroke="{RULE}" stroke-width="1"/>
-    <text x="36" y="46" text-anchor="middle" font-family="{SERIF}" font-size="28" fill="{SIGNAL}">PG</text>
+  <!-- Right: focus panel (replaces decorative grid / empty box) -->
+  <g class="f" {d(0.5)} transform="translate(548 72)">
+    <rect x="0" y="0" width="280" height="256" rx="10" fill="{SLATE_DEEP}" stroke="{RULE}" stroke-width="1"/>
+    <rect x="0" y="0" width="3" height="256" fill="{SIGNAL}" opacity="0.85"/>
+    <text x="24" y="36" font-family="{MONO}" font-size="11" letter-spacing="2" fill="{SIGNAL}">FOCUS</text>
+    <text x="236" y="36" text-anchor="end" font-family="{SERIF}" font-size="18" fill="{SIGNAL}">PG</text>
+
+    <text x="24" y="78" font-family="{MONO}" font-size="11" letter-spacing="1.5" fill="{MIST}">01</text>
+    <text x="56" y="78" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Payments</text>
+    <text x="56" y="100" font-family="{SANS}" font-size="13" fill="{PAPER_SOFT}">HSBC · SFMS · Kafka</text>
+    <line x1="24" y1="118" x2="256" y2="118" stroke="{RULE}" stroke-width="1"/>
+
+    <text x="24" y="152" font-family="{MONO}" font-size="11" letter-spacing="1.5" fill="{MIST}">02</text>
+    <text x="56" y="152" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Products</text>
+    <text x="56" y="174" font-family="{SANS}" font-size="13" fill="{PAPER_SOFT}">Wynklo · Clubmates · Bookit</text>
+    <line x1="24" y1="192" x2="256" y2="192" stroke="{RULE}" stroke-width="1"/>
+
+    <text x="24" y="226" font-family="{MONO}" font-size="11" letter-spacing="1.5" fill="{MIST}">03</text>
+    <text x="56" y="226" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Systems</text>
+    <text x="56" y="248" font-family="{SANS}" font-size="13" fill="{PAPER_SOFT}">Observability across 40+ envs</text>
   </g>
 </g>
 """
