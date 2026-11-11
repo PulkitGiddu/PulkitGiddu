@@ -2,11 +2,11 @@
 """
 Render the profile README's cards as animated SVGs into cards/.
 
-Design: graphite charcoal + steel azure (confident, calm, precise — engineer /
-product-builder). Technique follows Avi Vashishta's animated SVG card system:
-standalone SVGs shown through <img>, inline CSS keyframes + SMIL, fonts as
-base64 WOFF data URIs, calm staggered top-to-bottom entrance,
-prefers-reduced-motion off, STATIC=1 end-state mode.
+Design: "Night Ledger" — obsidian surfaces + copper rail accent for a payments
+engineer / product builder (HSBC + Wynklo). Technique follows Avi Vashishta's
+animated SVG card system (not his paper/Three Worlds palette): standalone SVGs
+via <img>, inline CSS + SMIL, subset WOFF fonts as base64, calm staggered
+entrance, prefers-reduced-motion off, STATIC=1 end-state mode.
 
 Live contribution numbers come from data/contributions.json
 (fetch_contributions.py). Hand-set achievement figures below are taken from
@@ -34,21 +34,22 @@ ENVIRONMENTS = "40+"  # observability dashboard — confirm still accurate
 DEFECT_CUT = "75%"    # fewer recurring ops defects — confirm still accurate
 LEETCODE = "350+"     # existing README Marks row — confirm if grown
 
-# ---- brand tokens (graphite + steel azure) ---------------------------------
-# Confident / calm / precise — restrained neutrals + one steel accent.
-# Avoided: neon mint, purple AI-slop, cream+terracotta.
-INK = "#101418"          # page charcoal
-SLATE = "#171B22"        # card surface
-SLATE_DEEP = "#12151B"   # deeper inset
-MIST = "#7D8694"         # muted labels
-PAPER = "#ECEEF2"        # primary text
-PAPER_SOFT = "#B4BBC6"   # secondary text
-SIGNAL = "#5B87B0"       # steel azure — primary accent
-SIGNAL_DIM = "#3F6488"   # mid accent / tile fill
-SIGNAL_DEEP = "#243A52"  # deep accent / tile fill
-WARM = "#A8906C"         # soft brass (sparing secondary)
-RULE = "#252A33"         # hairlines
-BAR = "#3A4352"          # default activity bars
+# ---- brand tokens (Night Ledger) --------------------------------------------
+# Obsidian + copper rail — payments / product identity.
+# Avoided: Avi paper/Three Worlds, neon mint, purple AI-slop, cream+terracotta,
+# and generic steel-blue GitHub clones.
+INK = "#090B10"          # obsidian page
+SLATE = "#12161E"        # card surface
+SLATE_DEEP = "#0C0F14"   # deeper inset
+MIST = "#8A919C"         # muted labels
+PAPER = "#F0EBE3"        # warm off-white text
+PAPER_SOFT = "#B8B0A4"   # secondary text
+SIGNAL = "#C9956C"       # copper rail — primary accent
+SIGNAL_DIM = "#8F6A48"   # mid copper / tile fill
+SIGNAL_DEEP = "#3D2E22"  # deep copper / tile fill
+WARM = "#C9956C"         # alias — copper leads; IMPACT uses deep copper ground
+RULE = "#1C222C"         # ledger hairlines
+BAR = "#2A323E"          # default activity bars
 W = 880  # full card width ≈ GitHub README column at 100%
 
 SERIF = "'Instrument Serif', Georgia, serif"
@@ -63,30 +64,30 @@ FONT_FILES = {
     "mono": ("Geist Mono", "normal", 400, "geistmono-400.woff"),
 }
 
-# Calmer motion: shorter travel, less overshoot, no infinite sheen/scan/ring.
+# Cooler motion: short travel, one signature rail pulse (hero only via SMIL).
 BASE_CSS = """
-@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes pop{0%{opacity:0;transform:scale(.94)}100%{opacity:1;transform:none}}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+@keyframes pop{0%{opacity:0;transform:scale(.96)}100%{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 @keyframes nudge{0%,100%{transform:none}50%{transform:translateX(2px)}}
-@keyframes tilein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@keyframes slidein{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes tilein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes slidein{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
 @keyframes arrowin{from{opacity:0}to{opacity:1}}
-@keyframes roll{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.r{opacity:0;animation:rise .55s cubic-bezier(.22,.61,.36,1) both;transform-box:fill-box}
-.f{opacity:0;animation:fade .45s ease-out both}
-.g{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow .55s cubic-bezier(.22,.61,.36,1) both}
-.p{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .3s ease-out both}
-.live{animation:pulse 2.8s ease-in-out infinite}
-.n{transform-box:fill-box;animation:nudge 2.6s ease-in-out infinite}
-.nu{transform-box:fill-box;animation:nudge 2.6s ease-in-out infinite}
-.ti{opacity:0;transform-box:fill-box;animation:tilein .55s cubic-bezier(.22,.61,.36,1) both}
-.sl{opacity:0;transform-box:fill-box;animation:slidein .4s cubic-bezier(.22,.61,.36,1) both}
-.ai{opacity:0;transform-box:fill-box;animation:arrowin .35s ease-out both}
-.ro{opacity:0;transform-box:fill-box;animation:roll .45s cubic-bezier(.22,.61,.36,1) both}
-@media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro{animation:none!important;opacity:1!important;transform:none!important}}
+@keyframes roll{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.r{opacity:0;animation:rise .5s cubic-bezier(.22,.61,.36,1) both;transform-box:fill-box}
+.f{opacity:0;animation:fade .4s ease-out both}
+.g{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow .5s cubic-bezier(.22,.61,.36,1) both}
+.p{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .28s ease-out both}
+.live{animation:pulse 3s ease-in-out infinite}
+.n{transform-box:fill-box;animation:nudge 2.8s ease-in-out infinite}
+.nu{transform-box:fill-box;animation:nudge 2.8s ease-in-out infinite}
+.ti{opacity:0;transform-box:fill-box;animation:tilein .5s cubic-bezier(.22,.61,.36,1) both}
+.sl{opacity:0;transform-box:fill-box;animation:slidein .35s cubic-bezier(.22,.61,.36,1) both}
+.ai{opacity:0;transform-box:fill-box;animation:arrowin .3s ease-out both}
+.ro{opacity:0;transform-box:fill-box;animation:roll .4s cubic-bezier(.22,.61,.36,1) both}
+@media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro{animation:none!important;opacity:1!important;transform:none!important}.rail{display:none!important}}
 """
 
 
@@ -116,7 +117,7 @@ def svg(w, h, body, fonts, label, extra_css="", left=0, right=0, bottom=BOTTOM):
     if os.environ.get("STATIC"):
         css += (
             ".r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro{animation:none!important;"
-            "opacity:1!important;transform:none!important}"
+            "opacity:1!important;transform:none!important}.rail{display:none!important}"
         )
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{w:.3f}" height="{h}" '
@@ -156,56 +157,65 @@ def text_lines(x, y, lines, lh, attrs):
 
 # ---- 1 · hero -----------------------------------------------------------------
 def hero():
-    h = 420
-    # Quiet structural grid on the right (atmosphere, not neon sparkle)
-    cells = []
-    for col in range(7):
-        for row in range(8):
-            delay = 0.25 + col * 0.04 + row * 0.025
-            opac = 0.05 + ((col * 3 + row * 5) % 5) * 0.03
-            fill = SIGNAL if (col + row) % 6 == 0 else SIGNAL_DIM
-            cells.append(
-                f'<rect class="f" style="animation-delay:{delay:.2f}s" '
-                f'x="{560 + col * 36}" y="{90 + row * 30}" width="20" height="16" rx="2" '
-                f'fill="{fill}" fill-opacity="{opac:.2f}"/>'
-            )
+    h = 400
+    # Signature motion: a signal travels the payment rail under the tagline.
+    rail = ""
+    if not os.environ.get("STATIC"):
+        rail = f"""
+<g class="rail" opacity="0.9">
+  <line x1="56" y1="328" x2="420" y2="328" stroke="{RULE}" stroke-width="1"/>
+  <circle r="3.5" fill="{SIGNAL}">
+    <animate attributeName="cx" values="56;420;56" keyTimes="0;0.5;1" dur="5.5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="328;328;328" dur="5.5s" repeatCount="indefinite"/>
+  </circle>
+</g>
+"""
+    else:
+        rail = f'<line x1="56" y1="328" x2="420" y2="328" stroke="{RULE}" stroke-width="1"/>'
     body = f"""
 <defs>
   <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="{INK}"/><stop offset="55%" stop-color="{SLATE}"/>
+    <stop offset="0%" stop-color="{INK}"/><stop offset="60%" stop-color="{SLATE}"/>
     <stop offset="100%" stop-color="{SLATE_DEEP}"/>
   </linearGradient>
-  <radialGradient id="glow" cx="78%" cy="28%" r="42%">
-    <stop offset="0%" stop-color="{SIGNAL}" stop-opacity="0.12"/>
-    <stop offset="55%" stop-color="{SIGNAL_DIM}" stop-opacity="0.05"/>
+  <radialGradient id="glow" cx="88%" cy="18%" r="48%">
+    <stop offset="0%" stop-color="{SIGNAL}" stop-opacity="0.10"/>
+    <stop offset="60%" stop-color="{SIGNAL_DIM}" stop-opacity="0.04"/>
     <stop offset="100%" stop-color="{INK}" stop-opacity="0"/>
   </radialGradient>
-  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
-    <stop offset="0" stop-color="{PAPER}"/><stop offset=".45" stop-color="{PAPER}"/>
-    <stop offset=".5" stop-color="{SIGNAL}"/><stop offset=".55" stop-color="{PAPER}"/>
+  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="520" y2="0">
+    <stop offset="0" stop-color="{PAPER}"/><stop offset=".46" stop-color="{PAPER}"/>
+    <stop offset=".5" stop-color="{SIGNAL}"/><stop offset=".54" stop-color="{PAPER}"/>
     <stop offset="1" stop-color="{PAPER}"/>
-    <animateTransform attributeName="gradientTransform" type="translate" values="-600 0;600 0;600 0"
-      keyTimes="0;.35;1" dur="14s" begin="2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="gradientTransform" type="translate" values="-520 0;520 0;520 0"
+      keyTimes="0;.4;1" dur="12s" begin="1.8s" repeatCount="indefinite"/>
   </linearGradient>
-  <clipPath id="frame"><rect width="{W}" height="{h}" rx="14"/></clipPath>
+  <clipPath id="frame"><rect width="{W}" height="{h}" rx="12"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
-  <rect width="{W}" height="{h}" rx="14" fill="url(#bg)"/>
+  <rect width="{W}" height="{h}" rx="12" fill="url(#bg)"/>
   <rect width="{W}" height="{h}" fill="url(#glow)"/>
+  <!-- Ledger margin -->
+  <rect x="28" y="36" width="2" height="{h - 72}" fill="{SIGNAL}" opacity="0.55"/>
   <g class="f" {d(0)}>
-    <rect class="live" x="48" y="49" width="7" height="7" rx="1.5" fill="{SIGNAL}"/>
-    <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1.2" fill="{MIST}">SOFTWARE ENGINEER  ·  HSBC  ·  PUNE</text>
+    <rect class="live" x="52" y="48" width="7" height="7" rx="1" fill="{SIGNAL}"/>
+    <text x="70" y="56" font-family="{MONO}" font-size="12" letter-spacing="1.6" fill="{MIST}">SOFTWARE ENGINEER  ·  HSBC  ·  PUNE</text>
   </g>
-  <text class="r" {d(0.1)} x="44" y="168" font-family="{SERIF}" font-size="72" letter-spacing="-1.5" fill="{PAPER}">Pulkit</text>
-  <text class="r" {d(0.2)} x="44" y="248" font-family="{SERIF}" font-style="italic" font-size="72" letter-spacing="-1.5" fill="url(#shine)">Giddu</text>
-  <g class="r" {d(0.35)}>
-    {text_lines(48, 300, ["Payments at HSBC. Products of my own —", "currently building Wynklo."], 26, f'font-family="{SANS}" font-size="17" fill="{PAPER_SOFT}"')}
+  <text class="r" {d(0.08)} x="52" y="150" font-family="{SERIF}" font-size="68" letter-spacing="-1.2" fill="{PAPER}">Pulkit</text>
+  <text class="r" {d(0.18)} x="52" y="222" font-family="{SERIF}" font-style="italic" font-size="68" letter-spacing="-1.2" fill="url(#shine)">Giddu</text>
+  <g class="r" {d(0.3)}>
+    {text_lines(52, 268, ["Payments at HSBC. Products of my own —", "currently building Wynklo."], 24, f'font-family="{SANS}" font-size="16" fill="{PAPER_SOFT}"')}
   </g>
-  <g class="f" {d(0.5)}>
-    <text x="48" y="380" font-family="{MONO}" font-size="13" fill="{PAPER}">portfolio</text>
-    <text class="nu" x="126" y="380" font-family="{MONO}" font-size="13" fill="{SIGNAL}">&#8599;</text>
+  {rail}
+  <g class="f" {d(0.45)}>
+    <text x="52" y="368" font-family="{MONO}" font-size="12" fill="{PAPER}">portfolio</text>
+    <text class="nu" x="124" y="368" font-family="{MONO}" font-size="12" fill="{SIGNAL}">&#8599;</text>
   </g>
-  {''.join(cells)}
+  <!-- Monogram mark -->
+  <g class="f" {d(0.55)} transform="translate(760 140)">
+    <rect x="0" y="0" width="72" height="72" fill="none" stroke="{RULE}" stroke-width="1"/>
+    <text x="36" y="46" text-anchor="middle" font-family="{SERIF}" font-size="28" fill="{SIGNAL}">PG</text>
+  </g>
 </g>
 """
     write(
@@ -471,8 +481,8 @@ def section_title(slug, text, italic, theme, delay=4.4):
     )
 
 
-# ---- 5 · steel contribution graph --------------------------------------------
-STEEL = [SLATE_DEEP, "#1E2A38", "#2A4058", "#3A5A78", "#4A7398", SIGNAL]
+# ---- 5 · copper-rail contribution graph --------------------------------------
+RAIL = [SLATE_DEEP, "#2A221C", "#4A382C", "#6B5040", "#9A7352", SIGNAL]
 
 
 def level_for(c):
@@ -493,10 +503,10 @@ def heatmap(data):
             seen.add((date.year, date.month))
             months.append((col, date.strftime("%b")))
         c = day["count"]
-        delay = 0.55 + col * 0.02 + row * 0.015
+        delay = 0.5 + col * 0.018 + row * 0.012
         cells.append(
             f'<rect class="f" style="animation-delay:{delay:.2f}s" x="{gx + col * step}" y="{gy + row * step}" '
-            f'width="{cell}" height="{cell}" rx="2.5" fill="{STEEL[level_for(c)]}">'
+            f'width="{cell}" height="{cell}" rx="2.5" fill="{RAIL[level_for(c)]}">'
             f'<title>{day["date"]}: {c} contribution{"s" if c != 1 else ""}</title></rect>'
         )
     ncols = (len(days) + lead + 6) // 7
@@ -506,21 +516,22 @@ def heatmap(data):
         for col, m in months
         if col < ncols - 12
     )
-    legend_x = right - len(STEEL) * 14
+    legend_x = right - len(RAIL) * 14
     legend = "".join(
         f'<rect x="{legend_x + i * 14}" y="{gy + 7 * step + 6}" width="11" height="11" rx="2.5" fill="{c}"/>'
-        for i, c in enumerate(STEEL)
+        for i, c in enumerate(RAIL)
     )
     h = gy + 7 * step + 44
     body = f"""
-<rect width="{W}" height="{h}" rx="14" fill="{SLATE}"/>
-<text class="r" {d(0.45)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{PAPER}">Every day, <tspan font-style="italic" fill="{SIGNAL}">in steel</tspan></text>
-<text class="f" {d(0.45)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MIST}">REFRESHED DAILY</text>
+<rect width="{W}" height="{h}" rx="12" fill="{SLATE}"/>
+<rect x="0" y="0" width="{W}" height="1" fill="{SIGNAL}" opacity="0.25"/>
+<text class="r" {d(0.4)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{PAPER}">Every day, <tspan font-style="italic" fill="{SIGNAL}">on the rail</tspan></text>
+<text class="f" {d(0.4)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MIST}">REFRESHED DAILY</text>
 {''.join(cells)}
-<g class="f" {d(1.4)}>{labels}
+<g class="f" {d(1.25)}>{labels}
 <text x="{legend_x - 8}" y="{gy + 7 * step + 16}" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MIST}">less</text>
 {legend}
-<text x="{legend_x + len(STEEL) * 14 + 2}" y="{gy + 7 * step + 16}" font-family="{MONO}" font-size="11" fill="{MIST}">more</text></g>
+<text x="{legend_x + len(RAIL) * 14 + 2}" y="{gy + 7 * step + 16}" font-family="{MONO}" font-size="11" fill="{MIST}">more</text></g>
 """
     write(
         "heatmap.svg",
@@ -581,8 +592,8 @@ if __name__ == "__main__":
     tile(
         "impact",
         "IMPACT",
-        "#2A261F",
-        WARM,
+        "#2A221C",
+        SIGNAL,
         DEFECT_CUT,
         "fewer",
         "Recurring operational defects cut after incident triage.",
