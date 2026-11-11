@@ -24,68 +24,35 @@
 </style>
 <defs>
   <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#101418"/><stop offset="60%" stop-color="#171B22"/>
+    <stop offset="0%" stop-color="#101418"/><stop offset="55%" stop-color="#171B22"/>
     <stop offset="100%" stop-color="#12151B"/>
   </linearGradient>
-  <radialGradient id="glow" cx="88%" cy="18%" r="48%">
-    <stop offset="0%" stop-color="#5B87B0" stop-opacity="0.12"/>
-    <stop offset="60%" stop-color="#3F6488" stop-opacity="0.05"/>
+  <radialGradient id="glow" cx="78%" cy="28%" r="42%">
+    <stop offset="0%" stop-color="#5B87B0" stop-opacity="0.10"/>
+    <stop offset="55%" stop-color="#3F6488" stop-opacity="0.04"/>
     <stop offset="100%" stop-color="#101418" stop-opacity="0"/>
   </radialGradient>
-  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="520" y2="0">
-    <stop offset="0" stop-color="#ECEEF2"/><stop offset=".46" stop-color="#ECEEF2"/>
-    <stop offset=".5" stop-color="#5B87B0"/><stop offset=".54" stop-color="#ECEEF2"/>
+  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
+    <stop offset="0" stop-color="#ECEEF2"/><stop offset=".45" stop-color="#ECEEF2"/>
+    <stop offset=".5" stop-color="#5B87B0"/><stop offset=".55" stop-color="#ECEEF2"/>
     <stop offset="1" stop-color="#ECEEF2"/>
-    <animateTransform attributeName="gradientTransform" type="translate" values="-520 0;520 0;520 0"
-      keyTimes="0;.4;1" dur="12s" begin="1.8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="gradientTransform" type="translate" values="-600 0;600 0;600 0"
+      keyTimes="0;.35;1" dur="14s" begin="2s" repeatCount="indefinite"/>
   </linearGradient>
-  <clipPath id="frame"><rect width="880" height="400" rx="12"/></clipPath>
+  <clipPath id="frame"><rect width="880" height="400" rx="14"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
-  <rect width="880" height="400" rx="12" fill="url(#bg)"/>
+  <rect width="880" height="400" rx="14" fill="url(#bg)"/>
   <rect width="880" height="400" fill="url(#glow)"/>
-  <!-- Steel accent margin -->
-  <rect x="28" y="36" width="2" height="328" fill="#5B87B0" opacity="0.55"/>
   <g class="f" style="animation-delay:0.00s">
-    <rect class="live" x="52" y="48" width="7" height="7" rx="1" fill="#5B87B0"/>
-    <text x="70" y="56" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.6" fill="#7D8694">SOFTWARE ENGINEER  ·  HSBC  ·  PUNE</text>
+    <rect class="live" x="48" y="49" width="7" height="7" rx="1.5" fill="#5B87B0"/>
+    <text x="66" y="57" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.2" fill="#7D8694">SOFTWARE ENGINEER  ·  HSBC  ·  PUNE</text>
   </g>
-  <text class="r" style="animation-delay:0.08s" x="52" y="150" font-family="'Instrument Serif', Georgia, serif" font-size="68" letter-spacing="-1.2" fill="#ECEEF2">Pulkit</text>
-  <text class="r" style="animation-delay:0.18s" x="52" y="222" font-family="'Instrument Serif', Georgia, serif" font-style="italic" font-size="68" letter-spacing="-1.2" fill="url(#shine)">Giddu</text>
-  <g class="r" style="animation-delay:0.30s">
-    <text x="52" y="268" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" fill="#B4BBC6">Payments at HSBC. Products of my own —</text><text x="52" y="292" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" fill="#B4BBC6">currently building Wynklo.</text>
+  <text class="r" style="animation-delay:0.10s" x="44" y="158" font-family="'Instrument Serif', Georgia, serif" font-size="72" letter-spacing="-1.5" fill="#ECEEF2">Pulkit</text>
+  <text class="r" style="animation-delay:0.20s" x="44" y="238" font-family="'Instrument Serif', Georgia, serif" font-style="italic" font-size="72" letter-spacing="-1.5" fill="url(#shine)">Giddu</text>
+  <g class="r" style="animation-delay:0.35s">
+    <text x="48" y="292" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="17" fill="#B4BBC6">Payments at HSBC. Products of my own —</text><text x="48" y="318" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="17" fill="#B4BBC6">currently building Wynklo.</text>
   </g>
-  
-<g class="rail" opacity="0.9">
-  <line x1="56" y1="328" x2="420" y2="328" stroke="#252A33" stroke-width="1"/>
-  <circle r="3.5" fill="#5B87B0">
-    <animate attributeName="cx" values="56;420;56" keyTimes="0;0.5;1" dur="5.5s" repeatCount="indefinite"/>
-    <animate attributeName="cy" values="328;328;328" dur="5.5s" repeatCount="indefinite"/>
-  </circle>
-</g>
-
-  <g class="f" style="animation-delay:0.45s">
-    <text x="52" y="368" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#ECEEF2">portfolio</text>
-    <text class="nu" x="124" y="368" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#5B87B0">&#8599;</text>
-  </g>
-  <!-- Right: personal profile panel (no work/tech laundry list) -->
-  <g class="f" style="animation-delay:0.50s" transform="translate(548 72)">
-    <rect x="0" y="0" width="280" height="256" rx="10" fill="#12151B" stroke="#252A33" stroke-width="1"/>
-    <rect x="0" y="0" width="3" height="256" fill="#5B87B0" opacity="0.9"/>
-    <text x="24" y="34" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="2.2" fill="#5B87B0">PROFILE</text>
-    <text x="256" y="34" text-anchor="end" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.5" fill="#7D8694">PG</text>
-    <line x1="24" y1="48" x2="256" y2="48" stroke="#252A33" stroke-width="1"/>
-
-    <text x="24" y="80" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1.8" fill="#7D8694">BASE</text>
-    <text x="24" y="104" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#ECEEF2">Pune, India</text>
-    <line x1="24" y1="124" x2="256" y2="124" stroke="#252A33" stroke-width="1"/>
-
-    <text x="24" y="156" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1.8" fill="#7D8694">APPROACH</text>
-    <text x="24" y="180" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#ECEEF2">Curious · deliberate</text>
-    <line x1="24" y1="200" x2="256" y2="200" stroke="#252A33" stroke-width="1"/>
-
-    <text x="24" y="228" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" letter-spacing="1.8" fill="#7D8694">PRACTICE</text>
-    <text x="24" y="248" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#ECEEF2">Continuous learning</text>
-  </g>
+  <rect class="f" style="animation-delay:0.25s" x="560" y="78" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.29s" x="594" y="78" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.33s" x="628" y="78" width="22" height="20" rx="4" fill="#3A5A78"/><rect class="f" style="animation-delay:0.37s" x="662" y="78" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.41s" x="696" y="78" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.45s" x="730" y="78" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.49s" x="764" y="78" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.28s" x="560" y="108" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.32s" x="594" y="108" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.36s" x="628" y="108" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.40s" x="662" y="108" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.44s" x="696" y="108" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.48s" x="730" y="108" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.52s" x="764" y="108" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.31s" x="560" y="138" width="22" height="20" rx="4" fill="#3A5A78"/><rect class="f" style="animation-delay:0.35s" x="594" y="138" width="22" height="20" rx="4" fill="#3A5A78"/><rect class="f" style="animation-delay:0.39s" x="628" y="138" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.43s" x="662" y="138" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.47s" x="696" y="138" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.51s" x="730" y="138" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.55s" x="764" y="138" width="22" height="20" rx="4" fill="#3A5A78"/><rect class="f" style="animation-delay:0.34s" x="560" y="168" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.38s" x="594" y="168" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.42s" x="628" y="168" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.46s" x="662" y="168" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.50s" x="696" y="168" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.54s" x="730" y="168" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.58s" x="764" y="168" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.37s" x="560" y="198" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.41s" x="594" y="198" width="22" height="20" rx="4" fill="#3A5A78"/><rect class="f" style="animation-delay:0.45s" x="628" y="198" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.49s" x="662" y="198" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.53s" x="696" y="198" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.57s" x="730" y="198" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.61s" x="764" y="198" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.40s" x="560" y="228" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.44s" x="594" y="228" width="22" height="20" rx="4" fill="#3A5A78"/><rect class="f" style="animation-delay:0.48s" x="628" y="228" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.52s" x="662" y="228" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.56s" x="696" y="228" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.60s" x="730" y="228" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.64s" x="764" y="228" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.43s" x="560" y="258" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.47s" x="594" y="258" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.51s" x="628" y="258" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.55s" x="662" y="258" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.59s" x="696" y="258" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.63s" x="730" y="258" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.67s" x="764" y="258" width="22" height="20" rx="4" fill="#2A4058"/><rect class="f" style="animation-delay:0.46s" x="560" y="288" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.50s" x="594" y="288" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.54s" x="628" y="288" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.58s" x="662" y="288" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.62s" x="696" y="288" width="22" height="20" rx="4" fill="#1E2A38"/><rect class="f" style="animation-delay:0.66s" x="730" y="288" width="22" height="20" rx="4" fill="#4A7398"/><rect class="f" style="animation-delay:0.70s" x="764" y="288" width="22" height="20" rx="4" fill="#2A4058"/>
 </g>
 </svg>

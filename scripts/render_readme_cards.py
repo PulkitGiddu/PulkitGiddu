@@ -156,79 +156,64 @@ def text_lines(x, y, lines, lh, attrs):
 
 # ---- 1 · hero -----------------------------------------------------------------
 def hero():
+    # Match hero-target-photo: left identity stack + right contribution-style steel grid.
     h = 400
-    # Signature motion: a steel signal travels the rule under the tagline.
-    rail = ""
-    if not os.environ.get("STATIC"):
-        rail = f"""
-<g class="rail" opacity="0.9">
-  <line x1="56" y1="328" x2="420" y2="328" stroke="{RULE}" stroke-width="1"/>
-  <circle r="3.5" fill="{SIGNAL}">
-    <animate attributeName="cx" values="56;420;56" keyTimes="0;0.5;1" dur="5.5s" repeatCount="indefinite"/>
-    <animate attributeName="cy" values="328;328;328" dur="5.5s" repeatCount="indefinite"/>
-  </circle>
-</g>
-"""
-    else:
-        rail = f'<line x1="56" y1="328" x2="420" y2="328" stroke="{RULE}" stroke-width="1"/>'
+    # Measured from the reference photo: 7 cols × 8 rows of rounded steel cells.
+    # Levels map onto STEEL ramp (defined with heatmap) — muted → bright azure.
+    pattern = [
+        [2, 1, 3, 1, 1, 4, 1],
+        [2, 4, 1, 4, 2, 1, 1],
+        [3, 3, 1, 2, 1, 4, 3],
+        [1, 4, 1, 2, 4, 1, 4],
+        [4, 3, 1, 2, 1, 4, 2],
+        [2, 3, 2, 4, 1, 4, 2],
+        [4, 2, 1, 4, 4, 2, 2],
+        [1, 4, 1, 4, 1, 4, 2],
+    ]
+    steel = [SLATE_DEEP, "#1E2A38", "#2A4058", "#3A5A78", "#4A7398", SIGNAL]
+    cells = []
+    gx, gy, step_x, step_y, cw, ch = 560, 78, 34, 30, 22, 20
+    for row, levels in enumerate(pattern):
+        for col, level in enumerate(levels):
+            delay = 0.25 + col * 0.04 + row * 0.03
+            cells.append(
+                f'<rect class="f" style="animation-delay:{delay:.2f}s" '
+                f'x="{gx + col * step_x}" y="{gy + row * step_y}" '
+                f'width="{cw}" height="{ch}" rx="4" fill="{steel[level]}"/>'
+            )
     body = f"""
 <defs>
   <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="{INK}"/><stop offset="60%" stop-color="{SLATE}"/>
+    <stop offset="0%" stop-color="{INK}"/><stop offset="55%" stop-color="{SLATE}"/>
     <stop offset="100%" stop-color="{SLATE_DEEP}"/>
   </linearGradient>
-  <radialGradient id="glow" cx="88%" cy="18%" r="48%">
-    <stop offset="0%" stop-color="{SIGNAL}" stop-opacity="0.12"/>
-    <stop offset="60%" stop-color="{SIGNAL_DIM}" stop-opacity="0.05"/>
+  <radialGradient id="glow" cx="78%" cy="28%" r="42%">
+    <stop offset="0%" stop-color="{SIGNAL}" stop-opacity="0.10"/>
+    <stop offset="55%" stop-color="{SIGNAL_DIM}" stop-opacity="0.04"/>
     <stop offset="100%" stop-color="{INK}" stop-opacity="0"/>
   </radialGradient>
-  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="520" y2="0">
-    <stop offset="0" stop-color="{PAPER}"/><stop offset=".46" stop-color="{PAPER}"/>
-    <stop offset=".5" stop-color="{SIGNAL}"/><stop offset=".54" stop-color="{PAPER}"/>
+  <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
+    <stop offset="0" stop-color="{PAPER}"/><stop offset=".45" stop-color="{PAPER}"/>
+    <stop offset=".5" stop-color="{SIGNAL}"/><stop offset=".55" stop-color="{PAPER}"/>
     <stop offset="1" stop-color="{PAPER}"/>
-    <animateTransform attributeName="gradientTransform" type="translate" values="-520 0;520 0;520 0"
-      keyTimes="0;.4;1" dur="12s" begin="1.8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="gradientTransform" type="translate" values="-600 0;600 0;600 0"
+      keyTimes="0;.35;1" dur="14s" begin="2s" repeatCount="indefinite"/>
   </linearGradient>
-  <clipPath id="frame"><rect width="{W}" height="{h}" rx="12"/></clipPath>
+  <clipPath id="frame"><rect width="{W}" height="{h}" rx="14"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
-  <rect width="{W}" height="{h}" rx="12" fill="url(#bg)"/>
+  <rect width="{W}" height="{h}" rx="14" fill="url(#bg)"/>
   <rect width="{W}" height="{h}" fill="url(#glow)"/>
-  <!-- Steel accent margin -->
-  <rect x="28" y="36" width="2" height="{h - 72}" fill="{SIGNAL}" opacity="0.55"/>
   <g class="f" {d(0)}>
-    <rect class="live" x="52" y="48" width="7" height="7" rx="1" fill="{SIGNAL}"/>
-    <text x="70" y="56" font-family="{MONO}" font-size="12" letter-spacing="1.6" fill="{MIST}">SOFTWARE ENGINEER  ·  HSBC  ·  PUNE</text>
+    <rect class="live" x="48" y="49" width="7" height="7" rx="1.5" fill="{SIGNAL}"/>
+    <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1.2" fill="{MIST}">SOFTWARE ENGINEER  ·  HSBC  ·  PUNE</text>
   </g>
-  <text class="r" {d(0.08)} x="52" y="150" font-family="{SERIF}" font-size="68" letter-spacing="-1.2" fill="{PAPER}">Pulkit</text>
-  <text class="r" {d(0.18)} x="52" y="222" font-family="{SERIF}" font-style="italic" font-size="68" letter-spacing="-1.2" fill="url(#shine)">Giddu</text>
-  <g class="r" {d(0.3)}>
-    {text_lines(52, 268, ["Payments at HSBC. Products of my own —", "currently building Wynklo."], 24, f'font-family="{SANS}" font-size="16" fill="{PAPER_SOFT}"')}
+  <text class="r" {d(0.1)} x="44" y="158" font-family="{SERIF}" font-size="72" letter-spacing="-1.5" fill="{PAPER}">Pulkit</text>
+  <text class="r" {d(0.2)} x="44" y="238" font-family="{SERIF}" font-style="italic" font-size="72" letter-spacing="-1.5" fill="url(#shine)">Giddu</text>
+  <g class="r" {d(0.35)}>
+    {text_lines(48, 292, ["Payments at HSBC. Products of my own —", "currently building Wynklo."], 26, f'font-family="{SANS}" font-size="17" fill="{PAPER_SOFT}"')}
   </g>
-  {rail}
-  <g class="f" {d(0.45)}>
-    <text x="52" y="368" font-family="{MONO}" font-size="12" fill="{PAPER}">portfolio</text>
-    <text class="nu" x="124" y="368" font-family="{MONO}" font-size="12" fill="{SIGNAL}">&#8599;</text>
-  </g>
-  <!-- Right: personal profile panel (no work/tech laundry list) -->
-  <g class="f" {d(0.5)} transform="translate(548 72)">
-    <rect x="0" y="0" width="280" height="256" rx="10" fill="{SLATE_DEEP}" stroke="{RULE}" stroke-width="1"/>
-    <rect x="0" y="0" width="3" height="256" fill="{SIGNAL}" opacity="0.9"/>
-    <text x="24" y="34" font-family="{MONO}" font-size="11" letter-spacing="2.2" fill="{SIGNAL}">PROFILE</text>
-    <text x="256" y="34" text-anchor="end" font-family="{MONO}" font-size="11" letter-spacing="1.5" fill="{MIST}">PG</text>
-    <line x1="24" y1="48" x2="256" y2="48" stroke="{RULE}" stroke-width="1"/>
-
-    <text x="24" y="80" font-family="{MONO}" font-size="10" letter-spacing="1.8" fill="{MIST}">BASE</text>
-    <text x="24" y="104" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Pune, India</text>
-    <line x1="24" y1="124" x2="256" y2="124" stroke="{RULE}" stroke-width="1"/>
-
-    <text x="24" y="156" font-family="{MONO}" font-size="10" letter-spacing="1.8" fill="{MIST}">APPROACH</text>
-    <text x="24" y="180" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Curious · deliberate</text>
-    <line x1="24" y1="200" x2="256" y2="200" stroke="{RULE}" stroke-width="1"/>
-
-    <text x="24" y="228" font-family="{MONO}" font-size="10" letter-spacing="1.8" fill="{MIST}">PRACTICE</text>
-    <text x="24" y="248" font-family="{SANS}" font-size="16" font-weight="600" fill="{PAPER}">Continuous learning</text>
-  </g>
+  {''.join(cells)}
 </g>
 """
     write(
