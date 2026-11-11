@@ -2,11 +2,11 @@
 """
 Render the profile README's cards as animated SVGs into cards/.
 
-Design: nocturnal ink + mint signal (matched to Pulkit's portfolio / prior
-profile redesign). Technique follows Avi Vashishta's animated SVG card system:
+Design: graphite charcoal + steel azure (confident, calm, precise — engineer /
+product-builder). Technique follows Avi Vashishta's animated SVG card system:
 standalone SVGs shown through <img>, inline CSS keyframes + SMIL, fonts as
-base64 WOFF data URIs, staggered top-to-bottom entrance, prefers-reduced-motion
-off, STATIC=1 end-state mode.
+base64 WOFF data URIs, calm staggered top-to-bottom entrance,
+prefers-reduced-motion off, STATIC=1 end-state mode.
 
 Live contribution numbers come from data/contributions.json
 (fetch_contributions.py). Hand-set achievement figures below are taken from
@@ -34,18 +34,21 @@ ENVIRONMENTS = "40+"  # observability dashboard — confirm still accurate
 DEFECT_CUT = "75%"    # fewer recurring ops defects — confirm still accurate
 LEETCODE = "350+"     # existing README Marks row — confirm if grown
 
-# ---- brand tokens (ink / mint) ---------------------------------------------
-INK = "#0B0F14"
-SLATE = "#121821"
-SLATE_DEEP = "#0E141C"
-MIST = "#8B95A5"
-PAPER = "#E9EEF5"
-PAPER_SOFT = "#A8B2C1"
-SIGNAL = "#5EEAD4"
-SIGNAL_DIM = "#2A9B8A"
-SIGNAL_DEEP = "#134E4A"
-WARM = "#E8C07A"
-RULE = "#1C2533"
+# ---- brand tokens (graphite + steel azure) ---------------------------------
+# Confident / calm / precise — restrained neutrals + one steel accent.
+# Avoided: neon mint, purple AI-slop, cream+terracotta.
+INK = "#101418"          # page charcoal
+SLATE = "#171B22"        # card surface
+SLATE_DEEP = "#12151B"   # deeper inset
+MIST = "#7D8694"         # muted labels
+PAPER = "#ECEEF2"        # primary text
+PAPER_SOFT = "#B4BBC6"   # secondary text
+SIGNAL = "#5B87B0"       # steel azure — primary accent
+SIGNAL_DIM = "#3F6488"   # mid accent / tile fill
+SIGNAL_DEEP = "#243A52"  # deep accent / tile fill
+WARM = "#A8906C"         # soft brass (sparing secondary)
+RULE = "#252A33"         # hairlines
+BAR = "#3A4352"          # default activity bars
 W = 880  # full card width ≈ GitHub README column at 100%
 
 SERIF = "'Instrument Serif', Georgia, serif"
@@ -60,36 +63,30 @@ FONT_FILES = {
     "mono": ("Geist Mono", "normal", 400, "geistmono-400.woff"),
 }
 
+# Calmer motion: shorter travel, less overshoot, no infinite sheen/scan/ring.
 BASE_CSS = """
-@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes pop{0%{opacity:0;transform:scale(.3)}70%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:none}}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-@keyframes nudge{0%,100%{transform:none}50%{transform:translateX(4px)}}
-@keyframes nudgeup{0%,100%{transform:none}50%{transform:translate(3px,-3px)}}
-@keyframes tilein{0%{opacity:0;transform:translateY(90px) scale(.6) rotate(-9deg)}55%{opacity:1;transform:translateY(-10px) scale(1.05) rotate(2deg)}75%{transform:translateY(3px) scale(.98) rotate(-.8deg)}90%{transform:translateY(-1px) scale(1.01) rotate(.2deg)}100%{opacity:1;transform:none}}
-@keyframes slidein{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
-@keyframes arrowin{0%{opacity:0;transform:translateX(-30px)}60%{opacity:1;transform:translateX(6px)}100%{opacity:1;transform:none}}
-@keyframes roll{from{transform:translateY(60px)}to{transform:none}}
-@keyframes sheen{0%{transform:translateX(-260px) skewX(-20deg)}22%,100%{transform:translateX(420px) skewX(-20deg)}}
-@keyframes ring{0%{opacity:.7;transform:scale(.2)}100%{opacity:0;transform:scale(2.4)}}
-@keyframes scan{0%{transform:translateY(-40px)}100%{transform:translateY(460px)}}
-.r{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) both;transform-box:fill-box}
-.f{opacity:0;animation:fade .9s ease-out both}
-.g{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow .8s cubic-bezier(.2,.7,.2,1) both}
-.p{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .4s ease-out both}
-.live{animation:pulse 1.6s ease-in-out infinite}
-.n{transform-box:fill-box;animation:nudge 1.8s ease-in-out infinite}
-.nu{transform-box:fill-box;animation:nudgeup 1.8s ease-in-out infinite}
-.ti{opacity:0;transform-box:fill-box;transform-origin:50% 60%;animation:tilein 1.1s cubic-bezier(.2,.8,.2,1) both}
-.sl{opacity:0;transform-box:fill-box;animation:slidein .6s cubic-bezier(.2,.7,.2,1) both}
-.ai{opacity:0;transform-box:fill-box;animation:arrowin .7s cubic-bezier(.2,.7,.2,1) both}
-.ro{transform-box:fill-box;animation:roll .8s cubic-bezier(.15,.8,.2,1) both}
-.sh{animation:sheen 5s ease-in-out infinite}
-.rg{opacity:0;transform-box:fill-box;transform-origin:center;animation:ring 1s ease-out both}
-.sc{animation:scan 9s linear infinite}
-@media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro,.rg,.sc{animation:none!important;opacity:1!important;transform:none!important}.sh,.rg{display:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.94)}100%{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+@keyframes nudge{0%,100%{transform:none}50%{transform:translateX(2px)}}
+@keyframes tilein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes slidein{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+@keyframes arrowin{from{opacity:0}to{opacity:1}}
+@keyframes roll{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.r{opacity:0;animation:rise .55s cubic-bezier(.22,.61,.36,1) both;transform-box:fill-box}
+.f{opacity:0;animation:fade .45s ease-out both}
+.g{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow .55s cubic-bezier(.22,.61,.36,1) both}
+.p{opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .3s ease-out both}
+.live{animation:pulse 2.8s ease-in-out infinite}
+.n{transform-box:fill-box;animation:nudge 2.6s ease-in-out infinite}
+.nu{transform-box:fill-box;animation:nudge 2.6s ease-in-out infinite}
+.ti{opacity:0;transform-box:fill-box;animation:tilein .55s cubic-bezier(.22,.61,.36,1) both}
+.sl{opacity:0;transform-box:fill-box;animation:slidein .4s cubic-bezier(.22,.61,.36,1) both}
+.ai{opacity:0;transform-box:fill-box;animation:arrowin .35s ease-out both}
+.ro{opacity:0;transform-box:fill-box;animation:roll .45s cubic-bezier(.22,.61,.36,1) both}
+@media (prefers-reduced-motion: reduce){.r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro{animation:none!important;opacity:1!important;transform:none!important}}
 """
 
 
@@ -118,8 +115,8 @@ def svg(w, h, body, fonts, label, extra_css="", left=0, right=0, bottom=BOTTOM):
     css = font_face(fonts) + BASE_CSS + extra_css
     if os.environ.get("STATIC"):
         css += (
-            ".r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro,.sc{animation:none!important;"
-            "opacity:1!important;transform:none!important}.sh,.rg{display:none}"
+            ".r,.f,.g,.p,.live,.n,.nu,.ti,.sl,.ai,.ro{animation:none!important;"
+            "opacity:1!important;transform:none!important}"
         )
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{w:.3f}" height="{h}" '
@@ -160,16 +157,16 @@ def text_lines(x, y, lines, lh, attrs):
 # ---- 1 · hero -----------------------------------------------------------------
 def hero():
     h = 420
-    # Decorative mint grid on the right (no portrait asset required)
+    # Quiet structural grid on the right (atmosphere, not neon sparkle)
     cells = []
-    for col in range(8):
-        for row in range(10):
-            delay = 0.35 + col * 0.05 + row * 0.03
-            opac = 0.08 + ((col * 3 + row * 5) % 7) * 0.04
-            fill = SIGNAL if (col + row) % 5 == 0 else SIGNAL_DIM
+    for col in range(7):
+        for row in range(8):
+            delay = 0.25 + col * 0.04 + row * 0.025
+            opac = 0.05 + ((col * 3 + row * 5) % 5) * 0.03
+            fill = SIGNAL if (col + row) % 6 == 0 else SIGNAL_DIM
             cells.append(
-                f'<rect class="p" style="animation-delay:{delay:.2f}s" '
-                f'x="{540 + col * 34}" y="{70 + row * 28}" width="22" height="18" rx="3" '
+                f'<rect class="f" style="animation-delay:{delay:.2f}s" '
+                f'x="{560 + col * 36}" y="{90 + row * 30}" width="20" height="16" rx="2" '
                 f'fill="{fill}" fill-opacity="{opac:.2f}"/>'
             )
     body = f"""
@@ -179,38 +176,32 @@ def hero():
     <stop offset="100%" stop-color="{SLATE_DEEP}"/>
   </linearGradient>
   <radialGradient id="glow" cx="78%" cy="28%" r="42%">
-    <stop offset="0%" stop-color="{SIGNAL}" stop-opacity="0.28"/>
-    <stop offset="55%" stop-color="{SIGNAL_DIM}" stop-opacity="0.08"/>
+    <stop offset="0%" stop-color="{SIGNAL}" stop-opacity="0.12"/>
+    <stop offset="55%" stop-color="{SIGNAL_DIM}" stop-opacity="0.05"/>
     <stop offset="100%" stop-color="{INK}" stop-opacity="0"/>
   </radialGradient>
   <linearGradient id="shine" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0">
-    <stop offset="0" stop-color="{PAPER}"/><stop offset=".42" stop-color="{PAPER}"/>
-    <stop offset=".5" stop-color="{SIGNAL}"/><stop offset=".58" stop-color="{PAPER}"/>
+    <stop offset="0" stop-color="{PAPER}"/><stop offset=".45" stop-color="{PAPER}"/>
+    <stop offset=".5" stop-color="{SIGNAL}"/><stop offset=".55" stop-color="{PAPER}"/>
     <stop offset="1" stop-color="{PAPER}"/>
     <animateTransform attributeName="gradientTransform" type="translate" values="-600 0;600 0;600 0"
-      keyTimes="0;.45;1" dur="7s" begin="1.6s" repeatCount="indefinite"/>
-  </linearGradient>
-  <linearGradient id="scan" x1="0%" y1="0%" x2="0%" y2="100%">
-    <stop offset="0%" stop-color="{SIGNAL}" stop-opacity="0"/>
-    <stop offset="50%" stop-color="{SIGNAL}" stop-opacity="0.16"/>
-    <stop offset="100%" stop-color="{SIGNAL}" stop-opacity="0"/>
+      keyTimes="0;.35;1" dur="14s" begin="2s" repeatCount="indefinite"/>
   </linearGradient>
   <clipPath id="frame"><rect width="{W}" height="{h}" rx="14"/></clipPath>
 </defs>
 <g clip-path="url(#frame)">
   <rect width="{W}" height="{h}" rx="14" fill="url(#bg)"/>
   <rect width="{W}" height="{h}" fill="url(#glow)"/>
-  <rect class="sc" x="0" y="0" width="{W}" height="48" fill="url(#scan)" opacity="0.7"/>
   <g class="f" {d(0)}>
-    <rect class="live" x="48" y="49" width="8" height="8" rx="2" fill="{SIGNAL}"/>
+    <rect class="live" x="48" y="49" width="7" height="7" rx="1.5" fill="{SIGNAL}"/>
     <text x="66" y="57" font-family="{MONO}" font-size="12" letter-spacing="1.2" fill="{MIST}">SOFTWARE ENGINEER  ·  HSBC  ·  PUNE</text>
   </g>
-  <text class="r" {d(0.15)} x="44" y="168" font-family="{SERIF}" font-size="72" letter-spacing="-1.5" fill="{PAPER}">Pulkit</text>
-  <text class="r" {d(0.3)} x="44" y="248" font-family="{SERIF}" font-style="italic" font-size="72" letter-spacing="-1.5" fill="url(#shine)">Giddu</text>
-  <g class="r" {d(0.55)}>
+  <text class="r" {d(0.1)} x="44" y="168" font-family="{SERIF}" font-size="72" letter-spacing="-1.5" fill="{PAPER}">Pulkit</text>
+  <text class="r" {d(0.2)} x="44" y="248" font-family="{SERIF}" font-style="italic" font-size="72" letter-spacing="-1.5" fill="url(#shine)">Giddu</text>
+  <g class="r" {d(0.35)}>
     {text_lines(48, 300, ["Payments at HSBC. Products of my own —", "currently building Wynklo."], 26, f'font-family="{SANS}" font-size="17" fill="{PAPER_SOFT}"')}
   </g>
-  <g class="f" {d(0.8)}>
+  <g class="f" {d(0.5)}>
     <text x="48" y="380" font-family="{MONO}" font-size="13" fill="{PAPER}">portfolio</text>
     <text class="nu" x="126" y="380" font-family="{MONO}" font-size="13" fill="{SIGNAL}">&#8599;</text>
   </g>
@@ -233,7 +224,7 @@ def hero():
 TILE_W, TILE_H = 880 / 3 - 8, 210
 
 
-def count_up(num, word, x, y, attrs, begin, dur=1.1, frames=18):
+def count_up(num, word, x, y, attrs, begin, dur=0.65, frames=10):
     """Number counts up from 0 with SMIL <set> frames (works inside <img>)."""
     m = re.match(r"([\d.]+)(.*)", num)
     val, suf = float(m.group(1)), m.group(2)
@@ -261,27 +252,24 @@ def count_up(num, word, x, y, attrs, begin, dur=1.1, frames=18):
 def tile(name, label, color, on, num, word, blurb, delay, pos):
     lines = wrap(blurb, 34)
     blurb_svg = "".join(
-        f'<text class="r" {d(delay + 0.75 + i * 0.1)} x="24" y="{150 + i * 20}" font-family="{SANS}" '
-        f'font-size="14" fill="{on}" opacity=".92">{escape(l)}</text>'
+        f'<text class="r" {d(delay + 0.4 + i * 0.08)} x="24" y="{150 + i * 20}" font-family="{SANS}" '
+        f'font-size="14" fill="{on}" opacity=".9">{escape(l)}</text>'
         for i, l in enumerate(lines)
     )
     body = f"""
 <defs>
-  <clipPath id="card"><rect width="{TILE_W}" height="{TILE_H}" rx="14"/></clipPath>
+  <clipPath id="card"><rect width="{TILE_W}" height="{TILE_H}" rx="12"/></clipPath>
   <clipPath id="slot"><rect x="0" y="62" width="{TILE_W}" height="62"/></clipPath>
-  <linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>
-    <stop offset=".5" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 </defs>
 <g class="ti" {d(delay)}>
   <g clip-path="url(#card)">
     <rect width="{TILE_W}" height="{TILE_H}" fill="{color}"/>
-    <circle class="rg" {d(delay + 0.5)} cx="{TILE_W - 40}" cy="{TILE_H - 40}" r="60" fill="none" stroke="{on}" stroke-opacity=".45" stroke-width="2"/>
-    <rect class="sh" style="animation-delay:{delay + 1.4:.2f}s" x="0" y="-20" width="90" height="{TILE_H + 40}" fill="url(#gl)" transform="translate(-260 0)"/>
+    <rect x="0" y="0" width="{TILE_W}" height="1" fill="{SIGNAL}" opacity="0.35"/>
   </g>
-  <text class="sl" {d(delay + 0.35)} x="24" y="38" font-family="{MONO}" font-size="12" letter-spacing="1.2" fill="{on}">{label}</text>
-  <g class="ai" {d(delay + 0.5)}><text class="n" style="animation-delay:{delay + 1.3:.2f}s" x="250" y="38" font-family="{MONO}" font-size="14" fill="{on}">&#8594;</text></g>
-  <g clip-path="url(#slot)"><g class="ro" {d(delay + 0.45)}>
-    {count_up(num, word, 22, 112, f'font-family="{SERIF}" font-size="44" fill="{on}"', delay + 0.45)}
+  <text class="sl" {d(delay + 0.15)} x="24" y="38" font-family="{MONO}" font-size="12" letter-spacing="1.2" fill="{on}">{label}</text>
+  <g class="ai" {d(delay + 0.25)}><text class="n" style="animation-delay:{delay + 0.8:.2f}s" x="250" y="38" font-family="{MONO}" font-size="14" fill="{on}">&#8594;</text></g>
+  <g clip-path="url(#slot)"><g class="ro" {d(delay + 0.2)}>
+    {count_up(num, word, 22, 112, f'font-family="{SERIF}" font-size="44" fill="{on}"', delay + 0.2)}
   </g></g>
   {blurb_svg}
 </g>
@@ -314,19 +302,17 @@ def activity(data):
         is_best = m is best
         bh = max(4, round(m["total"] / top * maxh)) if m["total"] else 4
         x = x0 + i * (bw + gap)
-        fill = SIGNAL if is_best else (RULE if partial else PAPER_SOFT)
-        if not is_best and not partial:
-            fill = "#3A4556"
+        fill = SIGNAL if is_best else (RULE if partial else BAR)
         label = datetime.date.fromisoformat(m["month"] + "-01").strftime("%b")
         bars.append(
-            f'<rect class="g" style="animation-delay:{2.2 + i * 0.07:.2f}s" x="{x:.1f}" y="{base - bh}" '
-            f'width="{bw:.1f}" height="{bh}" rx="4" fill="{fill}"><title>{label}: {m["total"]:,}</title></rect>'
-            f'<text class="f" style="animation-delay:{2.2 + i * 0.07:.2f}s" x="{x + bw / 2:.1f}" y="{base + 22}" '
+            f'<rect class="g" style="animation-delay:{1.35 + i * 0.05:.2f}s" x="{x:.1f}" y="{base - bh}" '
+            f'width="{bw:.1f}" height="{bh}" rx="3" fill="{fill}"><title>{label}: {m["total"]:,}</title></rect>'
+            f'<text class="f" style="animation-delay:{1.35 + i * 0.05:.2f}s" x="{x + bw / 2:.1f}" y="{base + 22}" '
             f'text-anchor="middle" font-family="{MONO}" font-size="11" fill="{MIST}">{label}</text>'
         )
         if is_best:
             bars.append(
-                f'<text class="p" style="animation-delay:3.2s" x="{x + bw / 2:.1f}" y="{base - bh - 10}" '
+                f'<text class="p" style="animation-delay:2.0s" x="{x + bw / 2:.1f}" y="{base - bh - 10}" '
                 f'text-anchor="middle" font-family="{MONO}" font-size="11" fill="{SIGNAL}">{m["total"]:,}</text>'
             )
     cs = data["current_streak"]["length"]
@@ -342,16 +328,16 @@ def activity(data):
     for i, (big, small) in enumerate(stats):
         y = 104 + i * 92
         side.append(
-            f'<g class="r" {d(2.6 + i * 0.15)}>'
+            f'<g class="r" {d(1.6 + i * 0.1)}>'
             f'<text x="650" y="{y}" font-family="{SERIF}" font-size="40" fill="{PAPER}">{big}</text>'
             f'<text x="650" y="{y + 24}" font-family="{SANS}" font-size="13" fill="{MIST}">{small}</text></g>'
         )
         if i < 2:
-            side.append(f'<rect class="f" {d(2.6)} x="650" y="{y + 44}" width="190" height="1" fill="{RULE}"/>')
+            side.append(f'<rect class="f" {d(1.6)} x="650" y="{y + 44}" width="190" height="1" fill="{RULE}"/>')
     body = f"""
 <rect width="{W}" height="{h}" rx="14" fill="{SLATE}"/>
-<text class="f" {d(1.9)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MIST}">THE LAST 12 MONTHS ON GITHUB</text>
-<text class="r" {d(2.0)} x="38" y="114" font-family="{SERIF}" font-size="48" fill="{PAPER}">{data["total_contributions"]:,} <tspan font-style="italic" fill="{SIGNAL}">contributions</tspan></text>
+<text class="f" {d(1.15)} x="40" y="58" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MIST}">THE LAST 12 MONTHS ON GITHUB</text>
+<text class="r" {d(1.2)} x="38" y="114" font-family="{SERIF}" font-size="48" fill="{PAPER}">{data["total_contributions"]:,} <tspan font-style="italic" fill="{SIGNAL}">contributions</tspan></text>
 {''.join(bars)}
 {''.join(side)}
 """
@@ -485,8 +471,8 @@ def section_title(slug, text, italic, theme, delay=4.4):
     )
 
 
-# ---- 5 · mint contribution graph ---------------------------------------------
-MINT = [SLATE_DEEP, "#134E4A", "#1D6B63", SIGNAL_DIM, "#3DB8A8", SIGNAL]
+# ---- 5 · steel contribution graph --------------------------------------------
+STEEL = [SLATE_DEEP, "#1E2A38", "#2A4058", "#3A5A78", "#4A7398", SIGNAL]
 
 
 def level_for(c):
@@ -507,10 +493,10 @@ def heatmap(data):
             seen.add((date.year, date.month))
             months.append((col, date.strftime("%b")))
         c = day["count"]
-        delay = 1.0 + col * 0.03 + row * 0.02
+        delay = 0.55 + col * 0.02 + row * 0.015
         cells.append(
-            f'<rect class="p" style="animation-delay:{delay:.2f}s" x="{gx + col * step}" y="{gy + row * step}" '
-            f'width="{cell}" height="{cell}" rx="3" fill="{MINT[level_for(c)]}">'
+            f'<rect class="f" style="animation-delay:{delay:.2f}s" x="{gx + col * step}" y="{gy + row * step}" '
+            f'width="{cell}" height="{cell}" rx="2.5" fill="{STEEL[level_for(c)]}">'
             f'<title>{day["date"]}: {c} contribution{"s" if c != 1 else ""}</title></rect>'
         )
     ncols = (len(days) + lead + 6) // 7
@@ -520,21 +506,21 @@ def heatmap(data):
         for col, m in months
         if col < ncols - 12
     )
-    legend_x = right - len(MINT) * 14
+    legend_x = right - len(STEEL) * 14
     legend = "".join(
         f'<rect x="{legend_x + i * 14}" y="{gy + 7 * step + 6}" width="11" height="11" rx="2.5" fill="{c}"/>'
-        for i, c in enumerate(MINT)
+        for i, c in enumerate(STEEL)
     )
     h = gy + 7 * step + 44
     body = f"""
 <rect width="{W}" height="{h}" rx="14" fill="{SLATE}"/>
-<text class="r" {d(0.8)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{PAPER}">Every day, <tspan font-style="italic" fill="{SIGNAL}">in mint</tspan></text>
-<text class="f" {d(0.8)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MIST}">REFRESHED DAILY</text>
+<text class="r" {d(0.45)} x="42" y="62" font-family="{SERIF}" font-size="34" fill="{PAPER}">Every day, <tspan font-style="italic" fill="{SIGNAL}">in steel</tspan></text>
+<text class="f" {d(0.45)} x="{right}" y="60" text-anchor="end" font-family="{MONO}" font-size="12" letter-spacing="1" fill="{MIST}">REFRESHED DAILY</text>
 {''.join(cells)}
-<g class="f" {d(2.4)}>{labels}
+<g class="f" {d(1.4)}>{labels}
 <text x="{legend_x - 8}" y="{gy + 7 * step + 16}" text-anchor="end" font-family="{MONO}" font-size="11" fill="{MIST}">less</text>
 {legend}
-<text x="{legend_x + len(MINT) * 14 + 2}" y="{gy + 7 * step + 16}" font-family="{MONO}" font-size="11" fill="{MIST}">more</text></g>
+<text x="{legend_x + len(STEEL) * 14 + 2}" y="{gy + 7 * step + 16}" font-family="{MONO}" font-size="11" fill="{MIST}">more</text></g>
 """
     write(
         "heatmap.svg",
@@ -578,7 +564,7 @@ if __name__ == "__main__":
         YEARS,
         "years",
         "Shipping software — HSBC, Wynklo, and earlier builds.",
-        3.1,
+        2.35,
         0,
     )
     tile(
@@ -589,29 +575,29 @@ if __name__ == "__main__":
         ENVIRONMENTS,
         "envs",
         "Observability dashboard across payment environments at HSBC.",
-        3.35,
+        2.45,
         1,
     )
     tile(
         "impact",
         "IMPACT",
-        "#3D3420",
+        "#2A261F",
         WARM,
         DEFECT_CUT,
         "fewer",
         "Recurring operational defects cut after incident triage.",
-        3.6,
+        2.55,
         2,
     )
 
-    section_title("building", "What I'm", "building", "dark", delay=4.4)
-    section_title("building", "What I'm", "building", "light", delay=4.4)
+    section_title("building", "What I'm", "building", "dark", delay=3.15)
+    section_title("building", "What I'm", "building", "light", delay=3.15)
     building_stars = repo_stars(BUILDING)
     for i, (slug, name, desc, lang, color, _href, _gh) in enumerate(BUILDING):
-        repo_card(i, slug, name, desc, lang, color, building_stars.get(slug), 4.6)
+        repo_card(i, slug, name, desc, lang, color, building_stars.get(slug), 3.3)
 
-    section_title("built", "What I", "built", "dark", delay=5.1)
-    section_title("built", "What I", "built", "light", delay=5.1)
+    section_title("built", "What I", "built", "dark", delay=3.75)
+    section_title("built", "What I", "built", "light", delay=3.75)
     built_stars = repo_stars(BUILT)
     for i, (slug, name, desc, lang, color, _href, _gh) in enumerate(BUILT):
-        repo_card(i, slug, name, desc, lang, color, built_stars.get(slug), 5.3)
+        repo_card(i, slug, name, desc, lang, color, built_stars.get(slug), 3.9)
