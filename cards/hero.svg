@@ -68,26 +68,23 @@
     <text x="52" y="368" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#F0EBE3">portfolio</text>
     <text class="nu" x="124" y="368" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#C9956C">&#8599;</text>
   </g>
-  <!-- Right: focus panel (replaces decorative grid / empty box) -->
+  <!-- Right: personal panel (geography + mindset — not work/tech) -->
   <g class="f" style="animation-delay:0.50s" transform="translate(548 72)">
     <rect x="0" y="0" width="280" height="256" rx="10" fill="#0C0F14" stroke="#1C222C" stroke-width="1"/>
     <rect x="0" y="0" width="3" height="256" fill="#C9956C" opacity="0.85"/>
-    <text x="24" y="36" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="2" fill="#C9956C">FOCUS</text>
-    <text x="236" y="36" text-anchor="end" font-family="'Instrument Serif', Georgia, serif" font-size="18" fill="#C9956C">PG</text>
+    <text x="24" y="34" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="2" fill="#C9956C">ABOUT</text>
+    <text x="236" y="34" text-anchor="end" font-family="'Instrument Serif', Georgia, serif" font-size="18" fill="#C9956C">PG</text>
 
-    <text x="24" y="78" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.5" fill="#8A919C">01</text>
-    <text x="56" y="78" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#F0EBE3">Payments</text>
-    <text x="56" y="100" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="13" fill="#B8B0A4">HSBC · SFMS · Kafka</text>
+    <text x="24" y="78" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#F0EBE3">Based in Pune</text>
+    <text x="24" y="100" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="13" fill="#B8B0A4">India &#183; IST</text>
     <line x1="24" y1="118" x2="256" y2="118" stroke="#1C222C" stroke-width="1"/>
 
-    <text x="24" y="152" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.5" fill="#8A919C">02</text>
-    <text x="56" y="152" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#F0EBE3">Products</text>
-    <text x="56" y="174" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="13" fill="#B8B0A4">Wynklo · Clubmates · Bookit</text>
+    <text x="24" y="152" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#F0EBE3">Quiet builder</text>
+    <text x="24" y="174" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="13" fill="#B8B0A4">Ships when curious &#8212; by choice</text>
     <line x1="24" y1="192" x2="256" y2="192" stroke="#1C222C" stroke-width="1"/>
 
-    <text x="24" y="226" font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1.5" fill="#8A919C">03</text>
-    <text x="56" y="226" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#F0EBE3">Systems</text>
-    <text x="56" y="248" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="13" fill="#B8B0A4">Observability across 40+ envs</text>
+    <text x="24" y="226" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#F0EBE3">Always learning</text>
+    <text x="24" y="248" font-family="Geist, system-ui, -apple-system, sans-serif" font-size="13" fill="#B8B0A4">Problem-solving as a habit</text>
   </g>
 </g>
 </svg>
